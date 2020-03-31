@@ -7,14 +7,19 @@
   <body>
     <div class="container">
       <header>
-        <h1>The Topography of a Race*: Small Dollar Donors vs Large Dollar Donors and Something In-Between</h1>
-        <p>*State Senate District 25 Active Campaign Committee Donations as of March 2020</p>
+        <h1>Who Pays?</h1>
+        <p> Donations to State Politicians</p>
       </header>
-      <!-- all we need is an element to select -->
-      <div id="d3-container"> </div>
+      <!-- Politician Select at the top -->
+      <label class="selectLabel" for="polDropdown">Politician</label>
+      <select id="polDropdown" name="polDropdown"></select>
+      <div id="dashboard">
+        <!-- all we need is an element to select -->
+        <div id="barchart"> </div>
+     </div>
     </div>
     <script src="../lib/d3.js"></script>
     <script src="../lib/d3-array.js"></script>
-    <script src="main.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
