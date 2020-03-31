@@ -27,7 +27,7 @@ Promise.all(["../data/summarized_filings_1.csv",
 
 
 function init() {
-    default_selection = "93" // Default to Cuomo
+    default_selection = "1" // Default to Cuomo
     const selectElement = d3.select("#polDropdown").on("change", function () {
         state.selectedPolitician = this.value; // + UPDATE STATE WITH YOUR SELECTED VALUE
         console.log("new value is", this.value);
@@ -45,16 +45,16 @@ function init() {
     //SET SELECT ELEMENT'S DEFAULT VALUE (optional)
     selectElement.property("value", default_selection);
     state.selectedPolitician = default_selection
-    const rollUp = d3.rollups(
+    /*const rollUp = d3.rollups(
         state.data,
         v => ({ total: d3.sum(v, d => d.Total), donors: v }), // reduce function,
         d => d.Candidate_ID,
       );
     // Get the range of the domain
-    /*state.rollUp = rollUp
+    state.rollUp = rollUp
     console.log("rollUp",rollUp)
     var max = 0
-    for (var index in rollUp){
+    for (var index in rollUp.filter(d.Candidate_ID==default_selection)){
         if (rollUp[index][1].total > max) {
             max = rollUp[index][1].total 
         }
