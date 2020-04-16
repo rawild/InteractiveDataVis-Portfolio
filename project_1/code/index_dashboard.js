@@ -1,14 +1,14 @@
 // import our components
-import { Barchart } from "./Barchart.js";
+import { BarList } from "./BarList.js";
 
-let table, barchart, count, default_selection;
+let barList, default_selection;
 
 // global state
 let state = {
     data: [],
     electedsList: [],
     rollUp: [],
-    selectedPolitician: null,
+    selectedPoliticians: [1,2],
     donorsColor: []
 };
 Promise.all(["../data/summarized_filings_2.csv",
@@ -27,11 +27,10 @@ Promise.all(["../data/summarized_filings_2.csv",
 
 
 function init() {
-    default_selection = "1" 
+    //default_selection = "1" 
     const selectElement = d3.select("#polDropdown").on("change", function () {
-        state.selectedPolitician = this.value; // + UPDATE STATE WITH YOUR SELECTED VALUE
-        console.log("new value is", this.value);
-        draw(); // re-draw the graph based on this new selection
+        state.selectedPoliticians.push(this.value)
+        draw()
     });
     // add in dropdown options from the unique values in the data
     selectElement
@@ -44,29 +43,14 @@ function init() {
     //Donors Color
     //SET SELECT ELEMENT'S DEFAULT VALUE (optional)
     selectElement.property("value", default_selection);
-    state.selectedPolitician = default_selection
-    /*const rollUp = d3.rollups(
-        state.data,
-        v => ({ total: d3.sum(v, d => d.Total), donors: v }), // reduce function,
-        d => d.Candidate_ID,
-      );
-    // Get the range of the domain
-    state.rollUp = rollUp
-    console.log("rollUp",rollUp)
-    var max = 0
-    for (var index in rollUp.filter(d.Candidate_ID==default_selection)){
-        if (rollUp[index][1].total > max) {
-            max = rollUp[index][1].total 
-        }
-    }
-  
-    state.domain = [0,max]*/
-    barchart = new Barchart(state, setGlobalState);
+    //state.selectedPoliticians = default_selection
+    
+    barList = new BarList(state, setGlobalState)
     draw();
 }
 
 function draw() {
-    barchart.draw(state, setGlobalState);
+    barList.draw(state, setGlobalState)
 }
 
 // From Demo UTILITY FUNCTION: State updating function that we pass to our components so that they are able to update our global state object
