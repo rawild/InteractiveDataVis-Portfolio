@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Data Visualization Tutorial</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Who Pays?</h1>
+        <p> Donations to State Politicians</p>
+      </header>
+      <!-- Politician Select at the top -->
+      <label class="selectLabel" for="polDropdown">Politician</label>
+      <select id="polDropdown" name="polDropdown"></select>
+      <div id="dashboard">
+        <!-- all we need is an element to select -->
+        <div id="barchart"> </div>
+     </div>
+    </div>
+    <script src="../lib/d3.js"></script>
+    <script src="../lib/d3-array.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
