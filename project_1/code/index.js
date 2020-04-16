@@ -11,7 +11,7 @@ let state = {
     selectedPolitician: null,
     donorsColor: []
 };
-Promise.all(["../data/summarized_filings_1.csv",
+Promise.all(["../data/summarized_filings_2.csv",
 "../data/Electeds_List.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
