@@ -18,8 +18,8 @@ class BarList {
 
   draw(state, setGlobalState) {
     d3.selectAll(".barchart").remove()
-    console.log('selectedPoliticians',state.selectedPoliticians)
     // Get the data for the domain
+    //console.log("selected", state.selectedPoliticians)
     let filteredData=state.data.filter(d => state.selectedPoliticians.includes(d.Candidate_ID))
     const rollUp = d3.rollups(
       filteredData,
@@ -27,22 +27,38 @@ class BarList {
       d => d.Candidate_ID,
     );
     // Get the range of the domain
-    console.log("Domain rollUp", rollUp)
     var max = 0
     for (var index in rollUp) {
       if (rollUp[index][1].total > max) {
         max = rollUp[index][1].total
       }
     }
-    console.log("max",max)
+    //console.log('rollUp', rollUp)
     state.domain = [0,max]
+    
     console.log("now I am drawing the list");
-    console.log("selected:" + state.selectedPoliticians)
-    for (const politician in state.selectedPoliticians){
-      let barchart = new Barchart(state, state.selectedPoliticians[politician], setGlobalState);
-      barchart.draw(state, setGlobalState);
+    //console.log("selected:" + state.selectedPoliticians)
+
+    let bars = this.svg
+      .selectAll("g.listitem")
+      .data(state.selectedPoliticians, d=> d)
+      .join(
+       enter => enter.append("g")
+          .attr("class", "listitem")
+        .call(enter => enter.transition(.1)),
+        update => update,
+        exit => exit.remove()
+      )
+          
+      bars
+      .each(d => {
+        let barchart = new Barchart(state, d, setGlobalState)
+        barchart.draw(state, setGlobalState)
+      })
+      
     }
-  }
+
+    
 }
 
 export { BarList };

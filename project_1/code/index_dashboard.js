@@ -8,17 +8,18 @@ let state = {
     data: [],
     electedsList: [],
     rollUp: [],
-    selectedPoliticians: [1,2],
-    donorsColor: []
+    selectedPoliticians: [],
+    donorsColor: [],
+    domain: [0,0],
 };
 Promise.all(["../data/summarized_filings_2.csv",
 "../data/Electeds_List.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
-        console.log("data", data);
+        //console.log("data", data);
         state.data = data;
         d3.csv(files[1], d3.autoType).then(electeds => {
-            console.log("electeds", electeds)
+            //console.log("electeds", electeds)
             state.electedsList = electeds
             init();
         })
@@ -27,9 +28,10 @@ Promise.all(["../data/summarized_filings_2.csv",
 
 
 function init() {
-    //default_selection = "1" 
+    default_selection = 67 
+    state.selectedPoliticians.push(default_selection)
     const selectElement = d3.select("#polDropdown").on("change", function () {
-        state.selectedPoliticians.push(this.value)
+        state.selectedPoliticians.push(parseInt(this.value))
         draw()
     });
     // add in dropdown options from the unique values in the data
@@ -43,7 +45,7 @@ function init() {
     //Donors Color
     //SET SELECT ELEMENT'S DEFAULT VALUE (optional)
     selectElement.property("value", default_selection);
-    //state.selectedPoliticians = default_selection
+    //state.selectedPoliticians = [default_selection]
     
     barList = new BarList(state, setGlobalState)
     draw();

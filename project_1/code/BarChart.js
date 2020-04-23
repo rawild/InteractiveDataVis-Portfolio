@@ -20,41 +20,30 @@ class Barchart {
 
     draw(state, setGlobalState) {
         console.log("now I am drawing my graph");
-        console.log("selected:" + state.selectedPoliticians)
+        //console.log("this bar: " + this.politician)
+        //console.log('domain',state.domain)
         const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
         let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
         candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
-        console.log('candidate', candidate)
-        let rollUp = d3.rollups(
-            filteredData,
-            v => ({ total: d3.sum(v, d => d.Total), donors: v }), // reduce function,
-            d => d.Candidate_ID,
-          );
-        console.log("rollup", rollUp)
-        var max = 0
-        for (var index in rollUp){
-            if (rollUp[index][1].total > max) {
-                max = rollUp[index][1].total 
-            }
-        }
+       
+        
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)
-        console.log("nested", nested)
-        let xScale = d3
-            .scaleLinear()
-            .domain(state.domain)
-            .range([this.margins.left, this.width - this.margins.right]);
+        //console.log("nested", nested)
         
         let yScale = d3
             .scaleBand()
             .domain([candidate,candidate])
             .range([0,this.height])
-
+        let xScale = d3
+            .scaleLinear()
+            .domain(state.domain)
+            .range([this.margins.left, this.width - this.margins.right]);
         
         //yScale.domain([0,d3.max(filteredData.map(d => d.Total))])
         const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0,nested[0].values.length])
         var keys = d3.range(0,nested[0].values.length)
         let stackedData = d3.stack().keys(keys).value((d,key) => d.values[key].Total)(nested)
-        console.log("stackedData",stackedData)
+        //console.log("stackedData",stackedData)
      
         const bars = this.svg
             .selectAll("g")
@@ -66,37 +55,19 @@ class Barchart {
             .join("rect")
                 .attr("class", "bar")
                 .attr("x", d=> xScale(d[0]))
-                .attr("y", d => yScale(d.data.values[0].Candidate_ID))
+                .attr("y", d => yScale(candidate))
                 .attr("height", yScale.bandwidth())
                 .attr("width", d => xScale(d[1])-xScale(d[0]))
                 
         //Add the yAxis
-        const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);        
+        const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);     
+        //let xAxis = d3.svg.axis().tickValues([]);
+
         this.svg
           .append("g")
           .attr("class", "axis")
-          .attr("transform", `translate(${xScale(0)},0)`)
+          .attr("transform", `translate(${xScale(0)},${yScale(candidate)})`)
           .call(yAxis);
-        /*bars
-          .transition()
-          .duration(this.duration)
-          .attr(
-            "transform",
-            d => `translate(${xScale(d.Candidate_ID)}, ${yScale(d.Total)})`
-          );*/
-
-        /*bars
-          .select("rect")
-          .transition()
-          .duration(this.duration)
-          .attr("width", xScale.bandwidth())
-          .attr("height", d => this.height - yScale(d.Total))
-          .style("fill",  "purple") 
-    
-        bars
-          .select("text")
-          .attr("dy", "-.5em")
-          .text(d => ` ${d.Candidate_ID-1}: ${d.Donor}`);*/
     }
 }
 
