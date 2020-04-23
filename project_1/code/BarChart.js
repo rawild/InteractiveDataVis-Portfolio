@@ -1,15 +1,18 @@
 class Barchart {
 
-    constructor(state, setGlobalState) {
+    constructor(state, politician, setGlobalState) {
         // initialize properties here
         this.width = window.innerWidth * .9;
-        this.height = window.innerHeight * 0.8;
-        this.margins = { top: 20, bottom: 20, left: 20, right: 20 };
+        this.height = window.innerHeight * 0.1;
+        this.margins = { top: 20, bottom: 20, left: 100, right: 20 };
         this.duration = 1000;
         this.format = d3.format(",." + d3.precisionFixed(1) + "f");
+        this.politician = politician 
 
         this.svg = d3
-            .select("#barchart")
+            .select("#barlist")
+            .append("div")
+            .attr("class", "barchart")
             .append("svg")
             .attr("width", this.width)
             .attr("height", this.height);
@@ -17,41 +20,30 @@ class Barchart {
 
     draw(state, setGlobalState) {
         console.log("now I am drawing my graph");
-        console.log("selected:" + state.selectedPolitician)
-        const filteredData = state.data.filter(d => state.selectedPolitician == d.Candidate_ID);
-        //console.log("filteredData", filteredData)
-        //const donors = filteredData.map(d => d.Donor)
-        const candidates = filteredData.map(d=>d.Candidate_ID)
-        let rollUp = d3.rollups(
-            filteredData,
-            v => ({ total: d3.sum(v, d => d.Total), donors: v }), // reduce function,
-            d => d.Candidate_ID,
-          );
-          console.log("rollup", rollUp)
-        var max = 0
-        for (var index in rollUp){
-            if (rollUp[index][1].total > max) {
-                max = rollUp[index][1].total 
-            }
-        }
+        //console.log("this bar: " + this.politician)
+        //console.log('domain',state.domain)
+        const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
+        let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
+        candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
+       
+        
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)
-        console.log("nested", nested)
-        let xScale = d3
-            .scaleLinear()
-            .domain([0,max])
-            .range([this.margins.left, this.width - this.margins.right]);
+        //console.log("nested", nested)
         
         let yScale = d3
             .scaleBand()
-            .domain([0,d3.max(candidates)])
+            .domain([candidate,candidate])
             .range([0,this.height])
-
-        console.log("yScale - 1",yScale(1))
+        let xScale = d3
+            .scaleLinear()
+            .domain(state.domain)
+            .range([this.margins.left, this.width - this.margins.right]);
+        
         //yScale.domain([0,d3.max(filteredData.map(d => d.Total))])
         const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0,nested[0].values.length])
         var keys = d3.range(0,nested[0].values.length)
         let stackedData = d3.stack().keys(keys).value((d,key) => d.values[key].Total)(nested)
-        console.log("stackedData",stackedData)
+        //console.log("stackedData",stackedData)
      
         const bars = this.svg
             .selectAll("g")
@@ -63,32 +55,19 @@ class Barchart {
             .join("rect")
                 .attr("class", "bar")
                 .attr("x", d=> xScale(d[0]))
-                .attr("y", d => yScale(d.data.values[0].Candidate_ID))
+                .attr("y", d => yScale(candidate))
                 .attr("height", yScale.bandwidth())
                 .attr("width", d => xScale(d[1])-xScale(d[0]))
                 
-                
+        //Add the yAxis
+        const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);     
+        //let xAxis = d3.svg.axis().tickValues([]);
 
-        /*bars
-          .transition()
-          .duration(this.duration)
-          .attr(
-            "transform",
-            d => `translate(${xScale(d.Candidate_ID)}, ${yScale(d.Total)})`
-          );*/
-
-        /*bars
-          .select("rect")
-          .transition()
-          .duration(this.duration)
-          .attr("width", xScale.bandwidth())
-          .attr("height", d => this.height - yScale(d.Total))
-          .style("fill",  "purple") 
-    
-        bars
-          .select("text")
-          .attr("dy", "-.5em")
-          .text(d => ` ${d.Candidate_ID-1}: ${d.Donor}`);*/
+        this.svg
+          .append("g")
+          .attr("class", "axis")
+          .attr("transform", `translate(${xScale(0)},${yScale(candidate)})`)
+          .call(yAxis);
     }
 }
 
