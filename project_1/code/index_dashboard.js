@@ -19,7 +19,7 @@ Promise.all(["../data/summarized_filings_2.csv",
         //console.log("data", data);
         state.data = data;
         d3.csv(files[1], d3.autoType).then(electeds => {
-            //console.log("electeds", electeds)
+            console.log("electeds", electeds)
             state.electedsList = electeds
             init();
         })
@@ -28,17 +28,19 @@ Promise.all(["../data/summarized_filings_2.csv",
 
 
 function init() {
-    default_selection = 67 
-    state.selectedPoliticians.push(default_selection)
-    const selectElement = d3.select("#polDropdown").on("change", function () {
+    default_selection = "" 
+    //state.selectedPoliticians.push(default_selection)
+    const selectElement = d3.select("#addDropdown").on("change", function () {
         state.selectedPoliticians.push(parseInt(this.value))
         draw()
     });
     // add in dropdown options from the unique values in the data
+    selectElement.append("optgroup")
+    .attr("label","Select a Politician")
+    
     selectElement
         .selectAll("option")
-        .data(
-            state.electedsList) // + ADD DATA VALUES FOR DROPDOWN
+        .data(state.electedsList) // + ADD DATA VALUES FOR DROPDOWN
         .join("option")
         .attr("value", d => d.Elected_Id)
         .text(d => d.First_Name +" "+d.Last_Name);
@@ -52,7 +54,7 @@ function init() {
 }
 
 function draw() {
-    barList.draw(state, setGlobalState)
+    barList.draw(state, setGlobalState,removePolitician)
 }
 
 // From Demo UTILITY FUNCTION: State updating function that we pass to our components so that they are able to update our global state object
@@ -60,4 +62,10 @@ function setGlobalState(nextState) {
     state = { ...state, ...nextState };
     console.log("new state:", state);
     draw();
+}
+
+function removePolitician(politician){
+    console.log("recieved politician",politician)
+    let selectedPoliticians = state.selectedPoliticians.filter(d => d != politician)
+    setGlobalState({"selectedPoliticians" : selectedPoliticians})
 }

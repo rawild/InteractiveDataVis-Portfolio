@@ -16,7 +16,7 @@ class BarList {
       .attr("height", this.height);
   }
 
-  draw(state, setGlobalState) {
+  draw(state, setGlobalState, removePolitician) {
     d3.selectAll(".barchart").remove()
     // Get the data for the domain
     //console.log("selected", state.selectedPoliticians)
@@ -37,25 +37,26 @@ class BarList {
     state.domain = [0,max]
     
     console.log("now I am drawing the list");
-    //console.log("selected:" + state.selectedPoliticians)
-
-    let bars = this.svg
-      .selectAll("g.listitem")
-      .data(state.selectedPoliticians, d=> d)
-      .join(
-       enter => enter.append("g")
-          .attr("class", "listitem")
-        .call(enter => enter.transition(.1)),
-        update => update,
-        exit => exit.remove()
-      )
-          
-      bars
-      .each(d => {
-        let barchart = new Barchart(state, d, setGlobalState)
-        barchart.draw(state, setGlobalState)
-      })
-      
+    console.log("selected length:" + state.selectedPoliticians.length)
+    console.log("selected", state.selectedPoliticians)
+    if (state.selectedPoliticians.length > 0) {
+      let bars = this.svg
+        .selectAll("g.listitem")
+        .data(state.selectedPoliticians, d=> d)
+        .join(
+        enter => enter.append("g")
+            .attr("class", "listitem")
+          .call(enter => enter.transition(.1)),
+          update => update,
+          exit => exit.remove()
+        )
+            
+        bars
+        .each(d => {
+          let barchart = new Barchart(state, d, setGlobalState)
+          barchart.draw(state, removePolitician)
+        })
+    }
     }
 
     
