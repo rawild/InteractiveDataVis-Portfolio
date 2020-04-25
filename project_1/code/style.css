@@ -3,7 +3,13 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     padding: 1em 3em;
   }
-  
+  p {
+    font-size: 12px;
+  }
+  h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  }
   .tooltip {
     display: block;
     height: fit-content;
@@ -21,10 +27,15 @@ body {
   path.state {
     stroke: black;
   }
-  p {
-      font-size: 12px;
-    }
-  h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
-    }
+  .heavy {
+    font: bold 16px sans-serif;
+  }
+  .deleteButton {
+    fill: red;
+    font: bold 48px sans-serif;
+    cursor: pointer;
+
+  }
+  #addDropdown {
+    min-width: 170px;
+  }
