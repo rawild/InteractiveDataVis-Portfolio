@@ -1,6 +1,6 @@
 class Barchart {
 
-    constructor(state, politician, setGlobalState) {
+    constructor(state, politician, setGlobalState, removePolitician) {
         // initialize properties here
         this.width = window.innerWidth * .9;
         this.height = window.innerHeight * 0.1;
@@ -16,17 +16,12 @@ class Barchart {
             .append("svg")
             .attr("width", this.width)
             .attr("height", this.height);
-    }
-
-    draw(state, removePolitician) {
-        console.log("now I am drawing my graph for " + this.politician);
-        //console.log("this bar: " + this.politician)
-        console.log('donorsColor',state.donorsColor(10))
-        const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
-        let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
-        candidate = candidate[0].First_Name + "\n" + candidate[0].Last_Name
-
-
+            console.log('donorsColor',state.donorsColor(10))
+            const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
+            let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
+            candidate = candidate[0].First_Name + "\n" + candidate[0].Last_Name
+    
+    
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)
         console.log("nested", nested)
 
@@ -58,11 +53,17 @@ class Barchart {
             .attr("y", d => yScale(candidate))
             .attr("height", yScale.bandwidth())
             .attr("width", d => xScale(d[1]) - xScale(d[0]))
-            .on("mouseover", d)
-
+            .on("mouseover", d =>{
+                setGlobalState({ hover: {
+                    "Donor" : d[0].data.values[d.index].Donor,
+                    "Average Donation" : parseInt(d[0].data.values[d.index].Contribution_Avg),
+                    "Total Donated to All Campaigns" : d[0].data.values[d.index].Total,
+                    "Number of Donations Overall" : d[0].data.values[d.index].Count
+                }})
+              })
         //Add the yAxis
         const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(10);
-       
+        
 
         this.svg
             .append("g")
@@ -111,6 +112,28 @@ class Barchart {
                         removePolitician(politician)
                     })
             })
+        }
+    }
+
+    draw(state) {
+        console.log("now I am drawing my graph for " + this.politician);
+        console.log("state", state)
+        hoverData = Object.entries(state.hover);
+        if (hoverData[0][1] != null){
+            color = colorScale(state.hover['Bernie Donors'])
+            d3.select("#hover-content")
+            .attr("style","border: solid 12px "+ color +";")
+            .selectAll("div.row")
+            .data(hoverData)
+            .join("div")
+            .attr("class", "row")
+            .html(
+                d =>
+                // each d is [key, value] pair
+                d[1] // check if value exist
+                    ? `${d[0]}: ${d[1]}` // if they do, fill them in
+                    : null // otherwise, show nothing
+            );
         }
     }
 }

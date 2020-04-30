@@ -54,11 +54,19 @@ class BarList {
             
         bars
         .each(d => {
-          let barchart = new Barchart(state, d, setGlobalState)
-          barchart.draw(state, removePolitician)
+          let barchart = new Barchart(state, d, setGlobalState, removePolitician)
+          barchart.draw(state)
         })
-    }
-    }
+    
+        d3.select("#hover-content")
+        .attr("style","border: solid 5px #000000;")
+        .selectAll("div.row")
+        .data([1])
+        .join("div")
+        .attr("class", "row")
+        .html(d => `${"Hover over a Donor to get info."}`)
+      }
+  }
 
     
 }
