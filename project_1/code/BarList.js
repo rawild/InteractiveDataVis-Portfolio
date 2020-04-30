@@ -27,13 +27,14 @@ class BarList {
       d => d.Candidate_ID,
     );
     // Get the range of the domain
+    console.log('rollUp', rollUp)
     var max = 0
     for (var index in rollUp) {
       if (rollUp[index][1].total > max) {
         max = rollUp[index][1].total
       }
     }
-    //console.log('rollUp', rollUp)
+    
     state.domain = [0,max]
     
     console.log("now I am drawing the list");

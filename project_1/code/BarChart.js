@@ -20,16 +20,15 @@ class Barchart {
 
     draw(state, removePolitician) {
         console.log("now I am drawing my graph for " + this.politician);
-        //console.log(state)
         //console.log("this bar: " + this.politician)
-        //console.log('domain',state.domain)
+        console.log('donorsColor',state.donorsColor(10))
         const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
         let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
         candidate = candidate[0].First_Name + "\n" + candidate[0].Last_Name
 
 
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)
-        //console.log("nested", nested)
+        console.log("nested", nested)
 
         let yScale = d3
             .scaleBand()
@@ -41,16 +40,16 @@ class Barchart {
             .range([this.margins.left, this.width - this.margins.right]);
 
         //yScale.domain([0,d3.max(filteredData.map(d => d.Total))])
-        const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0, nested[0].values.length])
+        //const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0, nested[0].values.length])
         var keys = d3.range(0, nested[0].values.length)
         let stackedData = d3.stack().keys(keys).value((d, key) => d.values[key].Total)(nested)
-        //console.log("stackedData",stackedData)
+        console.log("stackedData",stackedData)
 
         const bars = this.svg
             .selectAll("g")
             .data(stackedData)
             .join("g")
-            .attr("fill", (d, i) => barColors(i))
+            .attr("fill", (d) => state.donorsColor(d[0].data.values[d.index].Cluster_ID))
             .selectAll("rect")
             .data(d => d)
             .join("rect")
@@ -59,6 +58,7 @@ class Barchart {
             .attr("y", d => yScale(candidate))
             .attr("height", yScale.bandwidth())
             .attr("width", d => xScale(d[1]) - xScale(d[0]))
+            .on("mouseover", d)
 
         //Add the yAxis
         const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(10);

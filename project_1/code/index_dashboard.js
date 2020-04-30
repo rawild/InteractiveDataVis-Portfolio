@@ -7,19 +7,18 @@ let barList, default_selection;
 let state = {
     data: [],
     electedsList: [],
-    rollUp: [],
     selectedPoliticians: [],
-    donorsColor: [],
-    domain: [0,0],
+    donorsColor: null,
+    domain: []
 };
-Promise.all(["../data/summarized_filings_2.csv",
+Promise.all(["../data/summarized_filings_3.csv",
 "../data/Electeds_List.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
         //console.log("data", data);
         state.data = data;
         d3.csv(files[1], d3.autoType).then(electeds => {
-            console.log("electeds", electeds)
+            //console.log("electeds", electeds)
             state.electedsList = electeds
             init();
         })
@@ -45,10 +44,17 @@ function init() {
         .attr("value", d => d.Elected_Id)
         .text(d => d.First_Name +" "+d.Last_Name);
     //Donors Color
+    let donors = d3.nest().key(d => d.Cluster_ID).entries(state.data)
+    console.log('donorsLength', donors.length)
+    state.donorsColor = d3.scaleSequential(d3.interpolateTurbo).domain([0, donors.length])
+    
+
     //SET SELECT ELEMENT'S DEFAULT VALUE (optional)
     selectElement.property("value", default_selection);
     //state.selectedPoliticians = [default_selection]
     
+
+
     barList = new BarList(state, setGlobalState)
     draw();
 }
