@@ -8,10 +8,9 @@ export default class BottomContent extends Component {
             element: d3.select('#bottom-content')
         });
         this.local = { 
-            width : window.innerWidth * 0.7,
-            height : 300,
+            width : window.innerWidth * 0.65,
             paddingInner : 0.2,
-            margin : { top: 10, bottom: 40, left: 200, right:140 },
+            margin : { top: 10, bottom: 40, left: 150, right:140 },
             duration : 1000,
             format : d3.format(",." + d3.precisionFixed(1) + "f")
         }
@@ -29,6 +28,7 @@ export default class BottomContent extends Component {
         self.element.selectAll("*").remove()
         let donors = store.state.donors
         if (donors != null){
+        let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
         // Scales for visualization
         donors.forEach(d => {
@@ -36,14 +36,15 @@ export default class BottomContent extends Component {
             console.log("candidate", candidate)
             d.candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
         })
-        self.element.append("p.subHeader")
+        self.element.append("p")
+            .attr("class", "subHeader")
             .text("Donor Stats: " + store.state.donorPrettyPrint(donors[0].donor))
         
         let yScale = d3
             .scaleBand()
             .domain(donors.map(d => d.candidate
                 ).reverse())
-            .range(donors.length > 1 ? [self.local.margin.top, self.local.height - self.local.margin.bottom]:[self.local.margin.top,75])
+            .range(donors.length > 1 ? [self.local.margin.top, height - self.local.margin.bottom]:[self.local.margin.top,60])
             .paddingInner(self.local.paddingInner);
         let xScale = d3
             .scaleLinear()
@@ -55,7 +56,7 @@ export default class BottomContent extends Component {
         let svg = self.element
             .append("svg")
             .attr("width", self.local.width)
-            .attr("height", self.local.height);
+            .attr("height", height);
         //append rects
         let bars = svg
             .selectAll("g.bar")
@@ -89,7 +90,7 @@ export default class BottomContent extends Component {
         bars
             .select("text")
             .attr("class","label")
-            .attr("dy", yScale.bandwidth()/1.5 )
+            .attr("dy", yScale.bandwidth()/2 -8 )
             .attr("x", d=>xScale(d.total)-xScale(0)+10)
             .text(d => `$${self.local.format(d.total)} total`)
             .append("tspan")
