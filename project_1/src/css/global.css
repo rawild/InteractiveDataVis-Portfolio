@@ -205,6 +205,12 @@ h1, h2 {
 
 */
 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: none;
+}
+
 body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: "Source Sans Pro", sans-serif;
@@ -252,6 +258,14 @@ body {
   .barClicked {
     stroke: rgb(57, 97, 57);
   }
+  .bar {
+      fill: rgb(150, 149, 149)
+  }
   #addDropdown {
     min-width: 170px;
   }
+  .label {
+    color: rgb(51, 51, 51, .8);
+    font: normal 14px sans-serif;
+  }
+  

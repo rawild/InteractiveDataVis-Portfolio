@@ -1,3 +1,4 @@
+/* state management adapted from: https://github.com/hankchizljaw/beedle */
 import store from './store/index.js'; 
 
 // Load up components
@@ -28,7 +29,7 @@ formElement.addEventListener('submit', evt => {
 });*/
 
 //Load the data
-Promise.all(["../data/summarized_filings_3.csv",
+Promise.all(["../data/summarized_filings_2015_20.csv",
 "../data/Electeds_List.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {

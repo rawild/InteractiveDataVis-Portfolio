@@ -18,8 +18,8 @@ export default {
     removePolitician(context, payload) {
         context.commit('removePolitician', payload)
     },
-    updateDonor(context, payload) {
-        context.commit('updateDonor', payload)
+    updateDonors(context, payload) {
+        context.commit('updateDonors', payload)
     }
     
 };

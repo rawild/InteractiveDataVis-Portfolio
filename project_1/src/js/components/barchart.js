@@ -55,74 +55,48 @@ export default class BarChart extends Component {
         //const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0, nested[0].values.length])
         var keys = d3.range(0, nested[0].values.length)
         let stackedData = d3.stack().keys(keys).value((d, key) => d.values[key].Total)(nested)
-
-        /*const bars = bar
-            .selectAll("g")
-            .data(stackedData)
-            .join("g")
-            .attr("fill", (d) => store.state.donorsColor(d[0].data.values[d.index].Cluster_ID))
-            .attr("id", d => {
-                d[0].data.values[d.index].Cluster_ID + "-" + d[0].data.values[d.index].Candidate_ID
+        // Build the bar with the stacked data
+        const bars = bar
+        .selectAll("rect")
+        .data(stackedData)
+        .join("rect")
+        .attr("fill", (d) => store.state.donorsColor(d[0].data.values[d.index].Cluster_ID))
+        .attr("class", d => {
+            return "donor" + d[0].data.values[d.index].Cluster_ID 
+        })
+        .attr("donor", (d) => {return d[0].data.values[d.index].Donor})
+        .attr("ave", (d) => {return parseInt(d[0].data.values[d.index].Contribution_Avg)})
+        .attr("total", (d) => { return d[0].data.values[d.index].Total})
+        .attr("count", (d) => { return d[0].data.values[d.index].Count})
+        .on("click", d => {  // add the click functionality
+            let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
+            let donors = []
+            d3.selectAll("."+id).each((d) => {
+                let donor = {}
+                donor["donor"] = d[0].data.values[d.index].Donor
+                donor["ave"] = parseInt(d[0].data.values[d.index].Contribution_Avg)
+                donor["total"] = d[0].data.values[d.index].Total
+                donor["count"] = d[0].data.values[d.index].Count
+                donor["candidate"] = d[0].data.key                
+                donors.push(donor)
             })
-            .on("click", d => {
-                console.log("d",d)
-                store.dispatch('updateDonor', { 
-                    "Donor" : d[0].data.values[d.index].Donor,
-                    "Average Donation" : parseInt(d[0].data.values[d.index].Contribution_Avg),
-                    "Total Donated to All Campaigns" : d[0].data.values[d.index].Total,
-                    "Number of Donations Overall" : d[0].data.values[d.index].Count
-                })
-             })
-             
-            .selectAll("rect")
-            .data(d => d)
-            .join("rect")
-            .attr("class", "bar")
-            .attr("x", d => xScale(d[0]))
-            .attr("y", d => yScale(candidate))
-            .attr("height", yScale.bandwidth())
-            .attr("width", d => xScale(d[1]) - xScale(d[0]))
-            .on("mouseover", d => {
-                //console.log(d)
-                let id = d[0].data.values[d.index].Cluster_ID + "-" + d[0].data.values[d.index].Candidate_ID
-                d3.select("#"+id)
-                   .attr("class","barHighlighted")                
+            //console.log('donors',donors)
+            store.dispatch('updateDonors', donors)
             })
-            //.on("mouseout", handleMouseOut);
-            */
-
-           const bars = bar
-            .selectAll("rect")
-            .data(stackedData)
-            .join("rect")
-            .attr("fill", (d) => store.state.donorsColor(d[0].data.values[d.index].Cluster_ID))
-            .attr("class", d => {
-                return "donor" + d[0].data.values[d.index].Cluster_ID 
-            })
-            .on("click", d => {
-                let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
-                
-                store.dispatch('updateDonor', { 
-                    "Donor" : d[0].data.values[d.index].Donor,
-                    "Average Donation" : parseInt(d[0].data.values[d.index].Contribution_Avg),
-                    "Total Donated to All Campaigns" : d[0].data.values[d.index].Total,
-                    "Number of Donations Overall" : d[0].data.values[d.index].Count
-                })
-             })
-            .attr("x", d => xScale(d[0][0]))
-            .attr("y", d => yScale(candidate))
-            .attr("height", () => yScale.bandwidth())
-            .attr("width", d => xScale(d[0][1]) - xScale(d[0][0]))
-            .on("mouseover", d => {
-                let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
-                console.log(id)
-                d3.selectAll("."+id)
-                   .attr("class","barHighlighted")                
-            })
-            .on("mouseout", d => {
-                d3.selectAll(".barHighlighted")
-                   .attr("class","donor"+ d[0].data.values[d.index].Cluster_ID)    
-            })
+        .attr("x", d => xScale(d[0][0]))
+        .attr("y", d => yScale(candidate))
+        .attr("height", () => yScale.bandwidth())
+        .attr("width", d => xScale(d[0][1]) - xScale(d[0][0]))
+        .on("mouseover", d => {
+            let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
+            //console.log(id)
+            d3.selectAll("."+id)
+                .classed("barHighlighted", true)                
+        })
+        .on("mouseout", d => {
+            d3.selectAll(".barHighlighted")
+                .classed("barHighlighted", false)    
+        })
 
 
         //Add the yAxis
