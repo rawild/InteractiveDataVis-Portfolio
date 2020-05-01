@@ -17,9 +17,9 @@ class Barchart {
             .attr("width", this.width)
             .attr("height", this.height);
             console.log('donorsColor',state.donorsColor(10))
-            const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
-            let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
-            candidate = candidate[0].First_Name + "\n" + candidate[0].Last_Name
+        const filteredData = state.data.filter(d => this.politician == d.Candidate_ID);
+        let candidate = state.electedsList.filter(d => this.politician == d.Elected_Id)
+        candidate = candidate[0].First_Name + "\n" + candidate[0].Last_Name
     
     
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)

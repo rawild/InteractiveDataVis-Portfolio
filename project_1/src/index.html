@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/global.css">
+    <title>Vanilla State Management</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <h1>Who Pays?</h1>
+          <p> Donations to State Politicians</p>
+        </header>
+        <!-- Politician Select at the top -->
+        <label class="selectLabel" for="addDropdown">Add Politician</label>
+        <select id="addDropdown" name="addDropdown">Select a Politician</select>
+        <div id="dashboard">
+          <!-- all we need is an element to select -->
+          <div id="barlist"> </div>
+          <div id="bottom-content">
+            <p class="sub-header">Donor Info</p>
+          </div>
+       </div>
+      </div>
+    </main>
+    <script src="../lib/d3.js"></script>
+    <script src="../lib/d3-array.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
