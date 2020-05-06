@@ -8,21 +8,24 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="header">
           <h1>Who Pays?</h1>
           <p> Donations to State Politicians
               2015-2020
           </p>
         </header>
-        <!-- Politician Select at the top -->
-        <label class="selectLabel" for="addDropdown">Add Politician</label>
-        <select id="addDropdown" name="addDropdown">Select a Politician</select>
-        <div id="dashboard">
-          <!-- all we need is an element to select -->
-          <div id="barlist"> </div>
-          <div id="bottom-content">
+
+          <div class = "top-item">
+            <!-- Politician Select at the top -->
+            <label class="selectLabel" for="addDropdown">Add Politician</label>
+            <select id="addDropdown" name="addDropdown">Select a Politician</select>
           </div>
-       </div>
+       
+          <!-- all we need is an element to select -->
+          <div id="candidate-box" class="left-item"></div>
+          <div id="barlist" class="middle-item"> </div>
+          <div id="bottom-content" class="bottom-item">
+          </div>
       </div>
     </main>
     <script src="../lib/d3.js"></script>

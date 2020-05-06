@@ -1,13 +1,14 @@
 import Component from '../lib/component.js';
 import store from '../store/index.js';
 
-export default class BottomContent extends Component {
+export default class CandidateBox extends Component {
     constructor() {
         super({
             store,
-            element: d3.select('#bottom-content')
+            element: d3.select('#candidate-box')
         });
         this.local = { 
+            width : window.innerWidth * 0.65,
             paddingInner : 0.2,
             margin : { top: 10, bottom: 40, left: 150, right:140 },
             duration : 1000,
@@ -22,11 +23,20 @@ export default class BottomContent extends Component {
      */
     render() {
         let self = this;
-        console.log("now I am drawing bottom ");
+        console.log("now I am drawing side ");
         //console.log("state.donors", store.state.donors)
         self.element.selectAll("*").remove()
-        let width = self.element.node().getBoundingClientRect().width
-        let donors = store.state.donors
+        
+        let politician = store.state.electeds.filter(elected => elected.Elected_Id == store.state.highlightPolitician)[0]
+        console.log("politician", politician)
+        let imagebox = self.element.append("div")
+            .attr("class","image-box")
+            imagebox.append("img")
+            .attr("src", "../data/img/a"+politician.District+".png")
+            .attr("width", "150px")
+        
+
+        /*let donors = store.state.donors
         if (donors != null){
         let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
@@ -49,13 +59,13 @@ export default class BottomContent extends Component {
         let xScale = d3
             .scaleLinear()
             .domain([0,d3.max(donors, d => d.total)])
-            .range([self.local.margin.left, width - self.local.margin.right]);
+            .range([self.local.margin.left, self.local.width - self.local.margin.right]);
         let yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);
         // Shape Drawing Code 
         // main svg square
         let svg = self.element
             .append("svg")
-            .attr("width", width)
+            .attr("width", self.local.width)
             .attr("height", height);
         //append rects
         let bars = svg
@@ -104,7 +114,7 @@ export default class BottomContent extends Component {
             .attr("class", "axis")
             .attr("transform", `translate(${xScale(0)},0)`)
             .call(yAxis);    
-        }
+        }*/
     }
     
 }

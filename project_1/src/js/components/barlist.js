@@ -11,8 +11,6 @@ export default class BarList extends Component {
             element: d3.select("#barlist")
         });
         this.local = {
-            width: window.innerWidth * .9,
-            height: window.innerHeight * 0.8,
             margins: { top: 20, bottom: 20, left: 10, right: 20 },
             duration: 1000,
             format: d3.format(",." + d3.precisionFixed(1) + "f")
@@ -27,10 +25,12 @@ export default class BarList extends Component {
     render() {
         let self = this;
         self.element.html("")
-        
+        let width = self.element.node().getBoundingClientRect().width
+        let height = self.element.node().getBoundingClientRect().height
         let list=self.element.append("g")
-            .attr("width", self.local.width)
-            .attr("height", self.local.height)
+            .attr("width", width)
+            .attr("height", height)
+            .attr("class", "list")
 
         
         console.log("now I am drawing the list");

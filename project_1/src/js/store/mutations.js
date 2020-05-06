@@ -19,6 +19,10 @@ export default {
         state.selectedPoliticians = state.selectedPoliticians.filter(d => d != payload)
         return state;
     },
+    highlightPolitician(state,payload) {
+        state.highlightPolitician = payload
+        return state;
+    },
     updateDonors(state, payload) {
         state.donors = payload
         return state;

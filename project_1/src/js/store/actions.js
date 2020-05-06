@@ -18,6 +18,9 @@ export default {
     removePolitician(context, payload) {
         context.commit('removePolitician', payload)
     },
+    highlightPolitician(context, payload){
+        context.commit('highlightPolitician', payload)
+    },
     updateDonors(context, payload) {
         context.commit('updateDonors', payload)
     }

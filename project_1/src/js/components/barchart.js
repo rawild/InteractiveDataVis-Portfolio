@@ -10,8 +10,8 @@ export default class BarChart extends Component {
             element: d3.select("g.listitem"),
         });
         this.local = {
-            width: window.innerWidth * .9,
-            height: window.innerHeight * 0.1,
+            //width: window.innerWidth * .9,
+            //height: window.innerHeight * 0.1,
             margins: { top: 20, bottom: 20, left: 100, right: 20 },
             duration: 1000,
             format: d3.format(",." + d3.precisionFixed(1) + "f"),
@@ -28,11 +28,15 @@ export default class BarChart extends Component {
     render() {
         let self = this;
         //console.log("self.politician",self.local.politician)
+        let list = d3.select(".list")
+        console.log('list', list)
+        let width = list.attr("width")
+        let height = 80
         let bar = self.element.append("div")
             .attr("class", "barchart")
             .append("svg")
-            .attr("width", self.local.width)
-            .attr("height", self.local.height)
+            .attr("width", width)
+            .attr("height", height)
         
         const filteredData = store.state.data.filter(d => self.local.politician == d.Candidate_ID);
         let candidate = store.state.electeds.filter(d => self.local.politician == d.Elected_Id)
@@ -45,11 +49,11 @@ export default class BarChart extends Component {
         let yScale = d3
             .scaleBand()
             .domain([candidate, candidate])
-            .range([0, self.local.height])
+            .range([0, height])
         let xScale = d3
             .scaleLinear()
             .domain([0,self.local.max])
-            .range([self.local.margins.left, self.local.width - self.local.margins.right]);
+            .range([self.local.margins.left, width - self.local.margins.right]);
 
         //yScale.domain([0,d3.max(filteredData.map(d => d.Total))])
         //const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0, nested[0].values.length])
@@ -131,8 +135,9 @@ export default class BarChart extends Component {
                 let firstName = words.pop()
                 line.push(firstName);
                 tspan.text(line.join(" "));
-                tspan.text(line.join(" "));
-                line = [firstName];
+                tspan.on("click", () => {
+                    store.dispatch("highlightPolitician", politician)
+                })
                 tspan = text.append("tspan")
                         .attr("x", -10)
                         .attr("y", y)
