@@ -10,7 +10,7 @@ import CandidateBox from "./components/candidatebox.js"
 
 //Load the data
 Promise.all(["../data/summarized_filings_2015_20.csv",
-"../data/Electeds_List.csv"
+"../data/Electeds_List.csv", "../data/candidates_summarized_2015_20.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
         //console.log("data", data);
@@ -18,8 +18,11 @@ Promise.all(["../data/summarized_filings_2015_20.csv",
         d3.csv(files[1], d3.autoType).then(electeds => {
             //console.log("electeds", electeds)
             store.dispatch('addElecteds', electeds)
-            console.log("hello?")
-            init()
+            d3.csv(files[2],d3.autoType).then(candidateYear => {
+                store.dispatch('addCandidateYear', candidateYear)
+                init()
+            })
+            
         })
     })
 });

@@ -7,6 +7,10 @@ export default {
         state.electeds = payload;
         return state;
     },
+    addCandidateYear(state, payload){
+        state.candidateYear = payload
+        return state;
+    },
     setDonorsColor(state, payload) {
         state.donorsColor = payload;
         return state;

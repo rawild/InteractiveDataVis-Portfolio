@@ -27,7 +27,8 @@ export default class BottomContent extends Component {
         self.element.selectAll("*").remove()
         let width = self.element.node().getBoundingClientRect().width
         let donors = store.state.donors
-        if (donors != null){
+        
+        if (donors != null && donors.length > 0){
         let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
         // Scales for visualization

@@ -5,6 +5,9 @@ export default {
     addElecteds(context, payload) {
         context.commit('addElecteds', payload);
     },
+    addCandidateYear(context, payload){
+        context.commit('addCandidateYear', payload)
+    },
     updateDomain(context, payload) {
         context.commit('updateDomain', payload)
     },

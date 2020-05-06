@@ -293,6 +293,20 @@ body {
     color: rgb(51, 51, 51, .8);
     font: normal 14px sans-serif;
   }
+  .area {
+    fill: rgb(19, 82, 255)
+  }
+  .trend {
+    fill: none;
+    stroke: black;
+  }
+
+  .axis-label {
+    font-size: 14px;
+    fill: black;
+    text-anchor: middle;
+  }
+  
   #bottom-content {
       /*margin-top: 10px;
       margin-left: auto;
