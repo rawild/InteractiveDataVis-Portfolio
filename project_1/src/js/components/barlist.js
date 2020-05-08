@@ -48,6 +48,21 @@ export default class BarList extends Component {
         console.log("now I am drawing the list");
 
         if (store.state.selectedPoliticians.length > 0) {
+            // add tips in
+            if (store.state.donors == null || store.state.donors.length == 0){
+                    d3.selectAll(".bottom-warning").remove()
+                    d3.select("#bottom-content")
+                    .append("div")
+                    .attr("class", "bottom-warning")
+                    .text('Click on a donation to see the donors stats.')
+            }
+            if (store.state.highlightPolitician == null || store.state.highlightPolitician.length == 0){
+                    d3.selectAll(".side-warning").remove()
+                    d3.select("#candidate-box")
+                    .append("div")
+                    .attr("class", "side-warning")
+                    .text('Click on a politician\'s name to see thier stats.')
+            }
             let filteredData=store.state.data.filter(d => store.state.selectedPoliticians.includes(d.Candidate_ID))
             const rollUp = d3.rollups(
                 filteredData,
