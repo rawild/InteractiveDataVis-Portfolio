@@ -34,7 +34,7 @@ body {
   
   .container {
       display: grid;
-      grid-template-columns: 250px 1fr;
+      grid-template-columns: 275px 1fr;
       grid-auto-rows: min-max(100px, auto);
   }
   .header {
@@ -84,6 +84,9 @@ body {
   } 
   .subHeader{
      font-size: 14px;
+ }
+ .subTitle {
+     margin-left: 10px
  }
  .statsParagraph{
      font-size: 16px;
@@ -190,8 +193,11 @@ body {
 }
   #addDropdown {
     min-width: 170px;
+    margin-left: 25px;
   }
-
+  #select {
+      margin-left: 50px;
+  }
   #barlist {
     margin: 50px 50px 0px 50px;
   }
