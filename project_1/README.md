@@ -1,3 +1,5 @@
+Link to project 1: https://rawild.github.io/InteractiveDataVis-Portfolio/project_1/src/
+
 # Prospectus
 ## Inspiration
 The inspiration for my project is two-fold. The first inspiration is around the rise in up-start working-class people who are running for office. Before the Sanders 2016 race, conventional wisdom around political races was summed up by the acronym of the Democratic Party's organization "EMILY's list": Early Money Is Like Yeast. If you didn't have the social connections to raise tens of thousands of dollars from friends and family in a couple of days, you weren't a viable candidate. The 2016 race totally transformed what what was considered possible via small dollar donations and a reliance on volunteer labor for outreach to voters. It inspired Alexandria Ocasio-Cortez and led to her ultimate victory. Julia Salazar followed in her footsteps, as did Tiffany Caban, who almost won in a district that has more voters than many states.  
