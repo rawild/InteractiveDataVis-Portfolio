@@ -24,14 +24,25 @@ export default class Selection extends Component {
             store.dispatch("addPolitician", parseInt(selectElement.node().value))
             store.processCallbacks(store.state, "selectedPoliticians")
         })
-        selectElement.append("optgroup")
-            .attr("label","Select a Politician")
-        
+       let groupedPols = d3.groups(store.state.electeds, d => d.County)
+        console.log("group",groupedPols)
         selectElement
+            .selectAll("optgroup")
+                .data(groupedPols)
+                .join("optgroup")
+                .attr("label", d=>d[0])
             .selectAll("option")
-            .data(store.state.electeds) // + ADD DATA VALUES FOR DROPDOWN
-            .join("option")
-            .attr("value", d => d.Elected_Id)
-            .text(d => d.First_Name +" "+d.Last_Name)
-        }
+                .data(d=>d[1].sort((a,b)=>{
+                    if (a.First_Name.toUpperCase() < b.First_Name.toUpperCase()){
+                        return -1
+                    }
+                    return 1
+                })) 
+                .join("option")
+                .attr("value", d => d.Elected_Id)
+                .text(d => {
+                    let prefix = d.Role == "Senate"?"Sen":d.Role == "Assembly"?"Assm":""
+                    return prefix+". "+d.First_Name +" "+d.Last_Name}
+                )
+            }
 }

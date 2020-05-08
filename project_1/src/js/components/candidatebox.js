@@ -35,21 +35,33 @@ export default class CandidateBox extends Component {
         let polSummary = store.state.candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
         // Add District header
         self.element.append("div")
-            .attr("class", "header-1")
+            .attr("class", "header-2")
+            .text(politician.First_Name + " " + politician.Last_Name)
+        self.element.append("div")
+            .attr("class", "header-2")
             .text(politician.Role + " District "+ politician.District)
         self.element.append("div")
             .attr("class", "sub-header")
-            .text("Counties: "+politician.Counties)
+            .text("Counties: "+politician.County)
         // District Image
+        self.element.append("div")
+            .attr("class", "sub-header")
+            .text(politician["Special Position"]!=null?"Special Postion: "+politician["Special Position"]:"")
         let imagebox = self.element.append("div")
             .attr("class","image-box")
         imagebox.append("img")
-            .attr("src", "../data/img/a"+politician.District+".png")
+            .attr("src", () => {
+                if (politician.Role == "Assembly"){
+                    return "../data/img/a"+politician.District+".png"
+                }
+                if (politician.Role == "Senate"){
+                    return "../data/img/s"+politician.District+".png"
+                }
+                return "../data/img/state.png"
+            })
             .attr("width", "150px")
         // Politician Details
-        self.element.append("div")
-            .attr("class", "header-1")
-            .text(politician.First_Name + " " + politician.Last_Name)
+        
 
         let polRollUp = d3.rollups(
             polSummary,
