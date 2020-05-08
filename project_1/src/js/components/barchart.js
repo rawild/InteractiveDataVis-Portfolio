@@ -147,7 +147,7 @@ export default class BarChart extends Component {
                     .attr("class","deleteButton")
                     .attr("x", -10)
                     .attr("y", y)
-                    .attr("dy", ++lineNumber * .3 + dy + "em")
+                    .attr("dy", ++lineNumber * .5 + dy + "em")
                     .text("-")
                     .on("click", () => {
                         store.dispatch("removePolitician", politician)

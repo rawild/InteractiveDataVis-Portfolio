@@ -1,4 +1,4 @@
-Elected_Id,District,First_Name,Last_Name,Party,First_Elected,County,Role,Special Position
+Elected_Id,District,First_Name,Last_Name,Party,First_Elected,County,Role,SpecialPosition
 1,10,James,Sanders,Democratic,2012,Queens,Senate,
 2,11,John,Liu,Democratic,2018,Queens,Senate,
 3,12,Michael,Gianaris,Democratic,2010,Queens,Senate,Deputy Majority Leader

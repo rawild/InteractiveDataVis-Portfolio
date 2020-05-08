@@ -19,6 +19,7 @@ export default class Selection extends Component {
     render() {
         let self = this;
         let selectElement=self.element
+        
         selectElement.on("change", () => {
             console.log("new politician", selectElement.node().value)
             store.dispatch("addPolitician", parseInt(selectElement.node().value))
@@ -41,8 +42,8 @@ export default class Selection extends Component {
                 .join("option")
                 .attr("value", d => d.Elected_Id)
                 .text(d => {
-                    let prefix = d.Role == "Senate"?"Sen":d.Role == "Assembly"?"Assm":""
-                    return prefix+". "+d.First_Name +" "+d.Last_Name}
+                    let prefix = d.Role == "Senate"?"Sen.":d.Role == "Assembly"?"Assm.":""
+                    return prefix+" "+d.First_Name +" "+d.Last_Name}
                 )
             }
 }

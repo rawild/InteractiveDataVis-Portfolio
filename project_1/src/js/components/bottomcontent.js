@@ -28,6 +28,11 @@ export default class BottomContent extends Component {
         self.element.selectAll("*").remove()
         let width = self.element.node().getBoundingClientRect().width
         let donors = store.state.donors
+        if (donors == null || donors.length == 0){
+            if (store.state.selectedPoliticians != null && store.state.selectedPoliticians.length > 0){
+                self.element.html(`Click on a donor to see the details.`)
+            }
+        }
         if (donors != null && donors.length > 0){
         let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
@@ -37,10 +42,10 @@ export default class BottomContent extends Component {
             d.candidateName = candidate[0].First_Name + " " + candidate[0].Last_Name
         })
         self.element.append("div")
-            .attr("class", "header-1")
+            .attr("class", "header-2 bottomheader")
             .text(donors[0].donor)
         self.element.append("div")
-            .attr("class", "header-3")
+            .attr("class", "subHeader bottomheader")
             .text("Donation Statistics")
         
         let yScale = d3
@@ -104,7 +109,8 @@ export default class BottomContent extends Component {
             .append("g")
             .attr("class", "axis-bottom")
             .attr("transform", `translate(${xScale(0)},0)`)
-            .call(yAxis);    
+            .call(yAxis)
+            .select(".domain").remove();    
         }
     }
     

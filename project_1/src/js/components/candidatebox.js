@@ -33,20 +33,9 @@ export default class CandidateBox extends Component {
 
         let politician = store.state.electeds.filter(elected => elected.Elected_Id == store.state.highlightPolitician)[0]
         let polSummary = store.state.candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
-        // Add District header
-        self.element.append("div")
-            .attr("class", "header-2")
-            .text(politician.First_Name + " " + politician.Last_Name)
-        self.element.append("div")
-            .attr("class", "header-2")
-            .text(politician.Role + " District "+ politician.District)
-        self.element.append("div")
-            .attr("class", "sub-header")
-            .text("Counties: "+politician.County)
+        
         // District Image
-        self.element.append("div")
-            .attr("class", "sub-header")
-            .text(politician["Special Position"]!=null?"Special Postion: "+politician["Special Position"]:"")
+        
         let imagebox = self.element.append("div")
             .attr("class","image-box")
         imagebox.append("img")
@@ -60,29 +49,40 @@ export default class CandidateBox extends Component {
                 return "../data/img/state.png"
             })
             .attr("width", "150px")
-        // Politician Details
-        
+        // Add District header
+        self.element.append("div")
+            .attr("class", "header-1")
+            .text(politician.First_Name + " " + politician.Last_Name)
+        self.element.append("div")
+            .attr("class", "subHeader")
+            .text(politician.Role + " District "+ politician.District)
+        self.element.append("div")
+            .attr("class", "subHeader")
+            .text("Counties: "+politician.County)
+        self.element.append("div")
+            .attr("class", "subHeader")
+            .text(politician["SpecialPosition"]!=null?"Special Postion: "+politician["SpecialPosition"]:"")
 
         let polRollUp = d3.rollups(
             polSummary,
             v => ({ 
-                "Total Money Received" : d3.sum(v, d => d.Total), 
-                "Average Donation" : d3.mean(v, d => d.Contribution_Avg),
-                "Number of Donors" : d3.sum(v, d => d.Donor_Count),
-                "Maximum Donation" : d3.max(v, d => d.Contribution_Max)
+                "Total" : d3.sum(v, d => d.Total), 
+                "Average" : d3.mean(v, d => d.Contribution_Avg),
+                "NumDonors" : d3.sum(v, d => d.Donor_Count),
+                "MaxDonation" : d3.max(v, d => d.Contribution_Max)
              }), 
             d => d.Candidate_ID,
         );
-
-        self.element.selectAll("div.subHeader")
-            .data(Object.entries(polRollUp[0][1]))
+        console.log(polRollUp)
+        self.element.selectAll("div.statsParagraph")
+            .data(polRollUp)
             .join("div")
-            .attr("class","subHeader")
-            .text(d => {
-                if (d[0] != "Number of Donors"){
-                    return d[0] + ": $" + d3.format(self.local.format)(d[1])
-                }
-                return d[0] + ": " + d3.format(self.local.format)(d[1])
+            .attr("class","statsParagraph")
+            .html(d => { console.log(d)
+                return `${politician.First_Name} has raised <b>$${d3.format(self.local.format)(d[1].Total)}</b> 
+                since 2015 from <b>${d[1].NumDonors}</b> donors with an average 
+                donation of <b>$${d3.format(self.local.format)(d[1].Average)}</b>. The biggest donor gave 
+                <b>$${d3.format(self.local.format)(d[1].MaxDonation)}</b>.`
             })
         self.element.append("div")
             .attr("id","candidate-line")

@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto&display=swap" rel="stylesheet"> 
     <title>Vanilla State Management</title>
 </head>
 <body>
     <div class="container">
         <header class="header">
-          <h1>Who Pays?</h1>
-          <p> Donations to State Politicians
-              2015-2020
-          </p>
+          <div class="title">Who Pays?</div>
+          <div class="subHeader"> Donations to State Politicians
+              2015 - January 2020
+          </div>
         </header>
 
-          <div class = "top-item">
-            <!-- Politician Select at the top -->
-            <label class="selectLabel" for="addDropdown">Add Politician</label>
-            <select id="addDropdown" name="addDropdown">Select a Politician</select>
+          <div class = "top-item-1">
+            <!-- Instructions -->
+            <div class="subHeader top">
+              <b>To start, add a politician from the drop down below.</b> The bands displayed represent donations to that politician. 
+            <span class = "purple">Purple</span> to <span class="green">green</span> are organizations, <span class="yellow">yellow</span> to <span class="red">red</span> are individuals. 
+            You can remove politicians with the <span class="deleteButtonDemo"> -</span> below the politician's name. You can add up to five politicians to compare their donations.
+            Click on politicians names or donor boxes to see details about them.
+            </div>
+          </div>
+           <!-- Politician Select at the top -->
+           <div class= "top-item-2"> 
+             <label class="selectLabel" for="addDropdown">Add a Politician:</label>
+            <select id="addDropdown" name="addDropdown"></select>
           </div>
        
-          <!-- all we need is an element to select -->
-          <div id="candidate-box" class="left-item">
-          </div>
+          <div id="candidate-box" class="left-item"></div>
           <div id="barlist" class="middle-item"> </div>
-          <div id="bottom-content" class="bottom-item">
-          </div>
+          <div id="bottom-content" class="bottom-item"></div>
+          <div class="closing-item">Methodology:</div>
       </div>
     </main>
     <script src="../lib/d3.js"></script>

@@ -1,227 +1,22 @@
-/**
-* Define variables
-*/
-/*
-:root {
-    --border: #888888;
-    --decor: #777777;
-    --text: #141414;
-    --text-secondary: #555555;
-    --danger: #d62c1a;
-    --danger--dark: #a82315;
-}
-
-/** 
-* Core styles 
-*/
-/*
-html {
-    height: 100%;
-    font-size: 16px;
-    background: #f3f3f3;
-}
-
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 2rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
-                    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text);
-}
-
-p {
-    margin: 0;
-}
-
-h1, h2 {
-    font-weight: 400;
-    line-height: 1.1;
-    margin: 0;
-}
-
-@media all and (min-width: 40em) {
-    main {
-        width: 80vw;
-        max-width: 40em;
-        margin: 0 auto
-    }
-}
-
-/**
-* Intro 
-*/
-/*
-.intro {
-    padding: 0 0 1rem 0;
-    margin: 0 0 2rem 0;
-    border-bottom: 1px dotted var(--border);
-}
-
-.intro__heading {
-    font-weight: 400;
-}
-
-.intro__summary {
-    margin-top: 0.3rem;
-    font-size: 1.3rem;
-    font-weight: 300;
-}
-
-.intro__summary b {
-    font-weight: 500;
-}
-
-/**
-* App 
-*/
-/*
-.app {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    grid-gap: 2rem;
-}
-
-.app__decor {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    line-height: 1;
-}
-
-.app__decor small {
-    display: block;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-}
-
-.app__decor > * {
-    display: block;
-}
-
-.app__decor > * + * {
-    margin-top: 0.4rem;
-}
-
-.app__items {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    font-weight: 300;
-}
-
-.app__items li {
-    position: relative;
-    padding: 0 0 0 2rem;
-    font-size: 1.3rem;
-}
-
-.app__items li::before {
-    content: "🎉";
-    position: absolute;
-    top: 1px;
-    left: 0;
-}
-
-.app__items li + li {
-    margin-top: 0.5rem;
-}
-
-.app__items button {
-    background: transparent;
-    border: none;
-    position: relative;
-    top: -1px;
-    color: var(--danger);
-    font-weight: 500;
-    font-size: 1rem;
-    margin: 0 0 0 5px;
-    cursor: pointer;
-}
-
-.app__items button:hover {
-    color: var(--danger--dark);
-}
-
-@media all and (min-width: 40rem) {
-    .app {
-        grid-template-columns: 2fr 1fr;
-    }
-}
 
 
-/**
-* New item
-*/
-/*
-.new-item {
-    margin: 2rem 0 0 0;
-    padding: 1rem 0 0 0;
-    border-top: 1px dotted var(--border);
-}
 
-/* Imporants override Boilerform styles and allow us to pull the CSS straight from the repo */
-/*
-.new-item__button {
-    position: relative;
-    top: 2px;
-    padding-bottom: 11px !important;
-}
-
-.new-item__label {
-    font-size: 1.1rem !important; 
-    font-weight: 400 !important;
-}
-
-/**
-* No items
-*/
-/*
-.no-items {
-    margin: 1rem 0 0 0;
-    color: var(--text-secondary);
-}
-
-/**
-* Visually hidden
-*/
-/*
-.visually-hidden { 
-    display: block;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(1px);
-    white-space: nowrap;
-    position: absolute;
-}
-
-*/
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: none;
-}
 
 body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding: 1em 3em;
+    fill: #585c5e;
+    color: #585c5e;
   }
   p {
     font-size: 12px;
   }
-  h1 {
-  font-size: 20px;
-  margin-bottom: 5px;
+  .title {
+    font-family: 'Bree Serif', serif;
+    font-size: 76px;
+    margin-bottom: 5px;
+    color: #585c5e;
   }
 
   .tooltip {
@@ -245,10 +40,16 @@ body {
     grid-row-start: 1;
     grid-row-end: span 1;
   }
-  .top-item {
+  .top-item-1 {
     grid-column-start: 1;
     grid-column-end: span 2;
     grid-row-start: 2;
+    grid-row-end: span 1;
+  }
+  .top-item-2 {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 3;
     grid-row-end: span 1;
   }
   .left-item{
@@ -256,7 +57,6 @@ body {
     grid-row-end: span 2;
   }
   .middle-item {
-
     grid-row-start: 4;
     grid-row-end: span 1;
   }
@@ -264,77 +64,121 @@ body {
     grid-row-start: 5;
     grid-row-end: span 1;
   }
-
+  .closing-item {
+    grid-row-start: 6;
+    grid-row-end: span 1;
+  }
+  .header-1{
+    font-size: 32px;
+    font-family: 'Bree Serif', serif;
+  }
+  .header-2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px 0px 0px;
+  } 
+  .subHeader{
+     font-size: 14px;
+ }
+ .statsParagraph{
+     font-size: 16px;
+     padding: 10px 10px 10px 0px;
+ }
+ .purple {
+     color: #4c246b;
+ }
+ .green {
+     color: #2baa4f;
+ }
+ .yellow {
+     color: #ebca0f;
+ }
+ .red {
+     color: #900c00;
+ }
+ .top {
+     padding: 30px 
+ }
+ .bottomheader{
+     padding: 10px 20px;
+ }
   .heavy {
+    fill: #364347;
     font: bold 16px sans-serif;
+    cursor: pointer;
+  }
+  .tick {
+    fill: #364347;
   }
   .deleteButton {
     fill: red;
-    font: bold 48px sans-serif;
+    font: bold 36px sans-serif;
     cursor: pointer;
-
+  }
+  .deleteButtonDemo{
+    color: red;
+    font: bold 24px f;
   }
   .barHighlighted{
     stroke: rgb(164, 245, 164);
     stroke-width: 3;
     fill-opacity: .3;   
   }
-
   .barClicked {
     stroke: rgb(57, 97, 57);
   }
   .bar {
-      fill: rgb(150, 149, 149)
+      fill: #585c5e;
   }
- .subHeader{
-     font-size: 15px;
- }
+  
   .label {
-    color: rgb(51, 51, 51, .8);
-    font: normal 14px sans-serif;
+    color:#585c5e;
+    font-size: 14px;
   }
   .area {
     fill: rgb(19, 82, 255)
   }
   .trend {
     fill: none;
-    stroke: black;
+    stroke:#585c5e;
   }
-
   .axis-label {
     font-size: 14px;
-    fill: black;
+    fill: #585c5e;
     text-anchor: middle;
   }
-  
+  .axis-bottom {
+      stroke:none;
+  }
+  .axis path,
+    .axis line {
+    fill: #364347;
+    stroke: none;
+    }
+    .selectLabel {
+        font-size: 20px;
+        font-weight: bold;
+    }
   #bottom-content {
-      /*margin-top: 10px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 10px 20px;
-      text-align: left;
-      width: 70%;
-      min-width: 400px;
-      background-color: rgb(236, 236, 236);*/
-      border-radius: 15px;
+     margin: 50px;
+     padding: 10px;
   }
   
   .image-box {
-    margin-top: 10px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
-    width: 30%;
+    text-align: center;
+    width: 100%;
     min-width: 150px;
     min-height: 170px;
-    background-color: #364347;
+    background-color: #585c5e;
     border-radius: 15px;
-    margin-right: auto;
 }
-
   #addDropdown {
     min-width: 170px;
   }
+
   #barlist {
-    margin-top: 20px;
+    margin: 50px 50px 0px 50px;
   }

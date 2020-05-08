@@ -26,6 +26,17 @@ export default class BarList extends Component {
     render() {
         let self = this;
         self.element.html("")
+        if (store.state.selectedPoliticians != null && store.state.selectedPoliticians.length >= 5){
+            d3.select("#addDropdown")
+                .attr("disabled", true)
+            d3.select(".top-item-2").append("div")
+                .attr("id","warning")
+                .text("Please remove a politician in order to add another one.")
+        } else {
+            d3.select("#addDropdown")
+            .attr("disabled", null)
+            d3.select("#warning").remove()
+        }
         let width = self.element.node().getBoundingClientRect().width
         let height = self.element.node().getBoundingClientRect().height
         let list=self.element.append("g")

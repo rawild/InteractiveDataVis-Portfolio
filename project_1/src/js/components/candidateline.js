@@ -23,7 +23,9 @@ export default class CandidateLine extends Component {
      */
     render() {
         let self = this;
-        
+        self.element.append("div")
+            .attr("class", "header-2")
+            .text("Donations by Year")
         const candidateYear = store.state.candidateYear
         let polSummary = candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
         
@@ -49,9 +51,7 @@ export default class CandidateLine extends Component {
         // + AXES
         const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(polSummary.length);
         const yAxis = d3.axisLeft(yScale).ticks(4)
-        self.element.append("div")
-            .attr("class", "heading-2")
-            .text("Donations by Year")
+        
         let svg = self.element.append("svg")
                 .attr("width", width)
                 .attr("height", height)
@@ -66,12 +66,7 @@ export default class CandidateLine extends Component {
                 .attr("dx", "-.8em")
                 .attr("dy", ".15em")
                 .attr("transform", "rotate(-65)")
-            .append("text")
-            .attr("class", "axis-label")
-            .attr("x", "50%")
-            .attr("dy", "3em")
-            
-            .text("Year");
+ 
         svg
             .append("g")
             .attr("class", "axis-side y-axis-side")
