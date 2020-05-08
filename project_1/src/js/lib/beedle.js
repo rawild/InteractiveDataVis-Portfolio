@@ -11,7 +11,7 @@ export default class Store {
         self.status = 'resting';
 
         // We store callbacks for when the state changes in here
-        self.callbacks = [];
+        self.callbacks = {};
 
         // Look in the passed params object for actions and mutations
         // that might have been passed in
@@ -34,7 +34,7 @@ export default class Store {
 
                 // Fire off our callback processor because if there's listeners,
                 // they're going to want to know that something has changed
-                self.processCallbacks(self.state);
+                self.processCallbacks(self.state, key);
 
                 // Reset the status ready for the next operation
                 self.status = 'resting';
@@ -110,15 +110,16 @@ export default class Store {
      * @param {object} data
      * @returns {boolean}
      */
-    processCallbacks(data) {
+    processCallbacks(data, key) {
         const self = this;
-
-        if(!self.callbacks.length) {
+        console.log("processing callbacks")
+        console.log("key", key)
+        if(!self.callbacks[key]) {
             return false;
         }
 
         // We've got callbacks, so loop each one and fire it off
-        self.callbacks.forEach(callback => callback(data));
+        self.callbacks[key].forEach(callback => callback(data));
 
         return true;
     }
@@ -130,16 +131,20 @@ export default class Store {
      * @param {function} callback
      * @returns {boolean}
      */
-    subscribe(callback) {
+    subscribe(callback, key) {
         const self = this;
-
+        console.log("subscribing")
+        console.log("key", key)
         if(typeof callback !== 'function') {
             console.error('You can only subscribe to Store changes with a valid function');
             return false;
         }
 
+        if (!self.callbacks[key]) { //initialize the array
+            self.callbacks[key] = []
+        }
         // A valid function, so it belongs in our collection
-        self.callbacks.push(callback);
+        self.callbacks[key].push(callback);
 
         return true;
     }

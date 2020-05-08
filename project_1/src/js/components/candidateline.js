@@ -5,7 +5,8 @@ export default class CandidateLine extends Component {
     constructor() {
         super({
             store,
-            element: d3.select('#candidate-line')
+            element: d3.select('#candidate-line'),
+            key: "highlightPolitician"
         });
         this.local = { 
             paddingInner : 0.2,
@@ -22,14 +23,17 @@ export default class CandidateLine extends Component {
      */
     render() {
         let self = this;
-        console.log("now I am drawing side ");
-        //console.log("state.donors", store.state.donors)
         
-        let polSummary = store.state.candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
+        const candidateYear = store.state.candidateYear
+        let polSummary = candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
+        
         polSummary.forEach(d => {
-            d.Contribution_Year = new Date(d.Contribution_Year, 0, 1)
+            if (d.Contribution_Year instanceof Date){
+                return d.Contribution_Year
+            }
+            return d.Contribution_Year = new Date(d.Contribution_Year, 0, 1)
         })
-        console.log('polSummary', polSummary)
+
         let width = 220
         let height = 150
         let xScale = d3
@@ -54,7 +58,7 @@ export default class CandidateLine extends Component {
 
         svg
             .append("g")
-            .attr("class", "axis x-axis1")
+            .attr("class", "axis-side x-axis-side")
             .attr("transform", `translate(0,${yScale(0)})`)
             .call(xAxis)
             .selectAll("text")	
@@ -70,11 +74,9 @@ export default class CandidateLine extends Component {
             .text("Year");
         svg
             .append("g")
-            .attr("class", "axis y-axis")
+            .attr("class", "axis-side y-axis-side")
             .attr("transform", `translate(${self.local.margin.left},0)`)
             .call(yAxis)
-            
-        
         
        const lineFunc = d3
             .line()

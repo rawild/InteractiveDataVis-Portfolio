@@ -11,8 +11,8 @@ export default class Component {
         this.render = this.render || function() {};
         
         // If there's a store passed in, subscribe to the state change
-        if(props.store instanceof Store) {
-            props.store.subscribe(() => self.render());
+        if(props.store instanceof Store && props.hasOwnProperty('key')) {
+            props.store.subscribe(() => self.render(), props.key);
         }
         
         // Store the HTML element to attach the render to if set

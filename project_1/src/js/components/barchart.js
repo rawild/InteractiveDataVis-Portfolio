@@ -29,7 +29,6 @@ export default class BarChart extends Component {
         let self = this;
         //console.log("self.politician",self.local.politician)
         let list = d3.select(".list")
-        console.log('list', list)
         let width = list.attr("width")
         let height = 80
         let bar = self.element.append("div")

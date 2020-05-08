@@ -8,7 +8,8 @@ export default class BarList extends Component {
     constructor() {
         super({
             store,
-            element: d3.select("#barlist")
+            element: d3.select("#barlist"),
+            key: "selectedPoliticians"
         });
         this.local = {
             margins: { top: 20, bottom: 20, left: 10, right: 20 },

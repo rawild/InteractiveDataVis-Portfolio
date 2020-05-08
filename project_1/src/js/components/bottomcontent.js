@@ -5,7 +5,8 @@ export default class BottomContent extends Component {
     constructor() {
         super({
             store,
-            element: d3.select('#bottom-content')
+            element: d3.select('#bottom-content'),
+            key: 'donors'
         });
         this.local = { 
             paddingInner : 0.2,
@@ -23,19 +24,17 @@ export default class BottomContent extends Component {
     render() {
         let self = this;
         console.log("now I am drawing bottom ");
-        //console.log("state.donors", store.state.donors)
+        
         self.element.selectAll("*").remove()
         let width = self.element.node().getBoundingClientRect().width
         let donors = store.state.donors
-
         if (donors != null && donors.length > 0){
         let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
         // Scales for visualization
         donors.forEach(d => {
             let candidate = store.state.electeds.filter(elected => d.candidate  == elected.Elected_Id)
-            console.log("candidate", candidate)
-            d.candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
+            d.candidateName = candidate[0].First_Name + " " + candidate[0].Last_Name
         })
         self.element.append("div")
             .attr("class", "header-1")
@@ -46,7 +45,7 @@ export default class BottomContent extends Component {
         
         let yScale = d3
             .scaleBand()
-            .domain(donors.map(d => d.candidate
+            .domain(donors.map(d => d.candidateName
                 ).reverse())
             .range(donors.length > 1 ? [self.local.margin.top, height - self.local.margin.bottom]:[self.local.margin.top,60])
             .paddingInner(self.local.paddingInner);
@@ -78,16 +77,14 @@ export default class BottomContent extends Component {
             )
         
         bars
-            .transition()
-            .duration(self.local.duration)
             .attr(
                 "transform",
-                d => `translate(${xScale(0)}, ${yScale(d.candidate)})`
+                d => `translate(${xScale(0)}, ${yScale(d.candidateName)})`
             )
         bars
             .select("rect")
             .transition()
-            .duration(self.local.duration)
+            .duration(0)
             .attr("height", yScale.bandwidth())
             .attr("width", d => xScale(d.total)- xScale(0))
 
@@ -105,7 +102,7 @@ export default class BottomContent extends Component {
         // append Y axis
         svg
             .append("g")
-            .attr("class", "axis")
+            .attr("class", "axis-bottom")
             .attr("transform", `translate(${xScale(0)},0)`)
             .call(yAxis);    
         }

@@ -5,7 +5,9 @@ export default class Selection extends Component {
     constructor() {
         super({
             store,
-            element: d3.select("#addDropdown")
+            element: d3.select("#addDropdown"),
+            key: "electeds"
+
         });
     }
     
@@ -20,7 +22,7 @@ export default class Selection extends Component {
         selectElement.on("change", () => {
             console.log("new politician", selectElement.node().value)
             store.dispatch("addPolitician", parseInt(selectElement.node().value))
-            store.processCallbacks()
+            store.processCallbacks(store.state, "selectedPoliticians")
         })
         selectElement.append("optgroup")
             .attr("label","Select a Politician")

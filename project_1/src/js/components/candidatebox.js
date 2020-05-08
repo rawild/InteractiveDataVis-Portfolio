@@ -6,7 +6,8 @@ export default class CandidateBox extends Component {
     constructor() {
         super({
             store,
-            element: d3.select('#candidate-box')
+            element: d3.select('#candidate-box'),
+            key: "highlightPolitician"
         });
         this.local = { 
             paddingInner : 0.2,
@@ -24,14 +25,14 @@ export default class CandidateBox extends Component {
     render() {
         let self = this;
         console.log("now I am drawing side ");
-        //console.log("state.donors", store.state.donors)
-        self.element.selectAll("*").remove()
-        
+        self.element.html("")
+        //catch empty state
+        if (store.state.highlightPolitician == null || store.state.highlightPolitician.length == 0){
+            return
+        }
+
         let politician = store.state.electeds.filter(elected => elected.Elected_Id == store.state.highlightPolitician)[0]
         let polSummary = store.state.candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
-        //console.log("politician", politician)
-        console.log('polSummary', polSummary)
-        
         // Add District header
         self.element.append("div")
             .attr("class", "header-1")
@@ -60,9 +61,7 @@ export default class CandidateBox extends Component {
              }), 
             d => d.Candidate_ID,
         );
-        let polSumData=Object.entries(polRollUp[0][1])
-        console.log("polRollUp", polSumData)
-        
+
         self.element.selectAll("div.subHeader")
             .data(Object.entries(polRollUp[0][1]))
             .join("div")
