@@ -30,8 +30,8 @@ export default class CandidateLine extends Component {
             d.Contribution_Year = new Date(d.Contribution_Year, 0, 1)
         })
         console.log('polSummary', polSummary)
-        let width = 250
-        let height = 200
+        let width = 220
+        let height = 150
         let xScale = d3
             .scaleTime()
             .domain(d3.extent(polSummary, d => d.Contribution_Year))
@@ -43,48 +43,39 @@ export default class CandidateLine extends Component {
             .range([height - self.local.margin.bottom, self.local.margin.top]);
         
         // + AXES
-        const xAxis = d3.axisBottom(xScale).tickSize(8);
-        const yAxis = d3.axisLeft(yScale)
-
+        const xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat("%Y")).ticks(polSummary.length);
+        const yAxis = d3.axisLeft(yScale).ticks(4)
+        self.element.append("div")
+            .attr("class", "heading-2")
+            .text("Donations by Year")
         let svg = self.element.append("svg")
                 .attr("width", width)
                 .attr("height", height)
 
         svg
             .append("g")
-            .attr("class", "axis x-axis")
+            .attr("class", "axis x-axis1")
             .attr("transform", `translate(0,${yScale(0)})`)
             .call(xAxis)
+            .selectAll("text")	
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-65)")
             .append("text")
             .attr("class", "axis-label")
             .attr("x", "50%")
             .attr("dy", "3em")
+            
             .text("Year");
         svg
             .append("g")
             .attr("class", "axis y-axis")
             .attr("transform", `translate(${self.local.margin.left},0)`)
             .call(yAxis)
-            .append("text")
-            .attr("class", "axis-label")
-            .attr("y", "10%")
-            .attr("x", "35%")
-            .attr("dx", "-3em")
-            .text("Donations by Year");
+            
         
-        /*
-        const areaFunc = d3
-            .area()
-            .x(d=> xScale(d.Contribution_Year))
-            .y0(d => yScale(0))
-            .y1(d => yScale(d.Total))
-        const area = svg
-            .selectAll("path.area")
-            .data(polSummary, d=>d.Contribution_Year)
-            .join("path")
-                .attr("class", "area")
-                .attr("opacity", 0.7) // start them off as opacity 0 and fade them in
-                .attr("d", areaFunc)*/
+        
        const lineFunc = d3
             .line()
             .x(d => xScale(d.Contribution_Year))
@@ -109,85 +100,7 @@ export default class CandidateLine extends Component {
                 .attr("opacity", 1)
                 .attr("d", d => lineFunc(d))
             );
-        /*let donors = store.state.donors
-        if (donors != null){
-        let height= donors.length * 60
-        donors = donors.sort((a,b) => d3.descending(a.total, b.total))
-        // Scales for visualization
-        donors.forEach(d => {
-            let candidate = store.state.electeds.filter(elected => d.candidate  == elected.Elected_Id)
-            console.log("candidate", candidate)
-            d.candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
-        })
-        self.element.append("p")
-            .attr("class", "subHeader")
-            .text("Donor Stats: " + store.state.donorPrettyPrint(donors[0].donor))
-        
-        let yScale = d3
-            .scaleBand()
-            .domain(donors.map(d => d.candidate
-                ).reverse())
-            .range(donors.length > 1 ? [self.local.margin.top, height - self.local.margin.bottom]:[self.local.margin.top,60])
-            .paddingInner(self.local.paddingInner);
-        let xScale = d3
-            .scaleLinear()
-            .domain([0,d3.max(donors, d => d.total)])
-            .range([self.local.margin.left, self.local.width - self.local.margin.right]);
-        let yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);
-        // Shape Drawing Code 
-        // main svg square
-        let svg = self.element
-            .append("svg")
-            .attr("width", self.local.width)
-            .attr("height", height);
-        //append rects
-        let bars = svg
-            .selectAll("g.bar")
-            .data(donors, d => d.candidate+d.donor)
-            .join(
-                enter =>
-                    enter
-                    .append("g")
-                    .attr("class", "bar")
-                    .call(enter => enter.append("rect"))
-                    .call(enter => enter.append("text")),
-                    
-            update => update,
-            exit => exit.remove()
-            )
-        
-        bars
-            .transition()
-            .duration(self.local.duration)
-            .attr(
-                "transform",
-                d => `translate(${xScale(0)}, ${yScale(d.candidate)})`
-            )
-        bars
-            .select("rect")
-            .transition()
-            .duration(self.local.duration)
-            .attr("height", yScale.bandwidth())
-            .attr("width", d => xScale(d.total)- xScale(0))
-
-        bars
-            .select("text")
-            .attr("class","label")
-            .attr("dy", yScale.bandwidth()/2 -8 )
-            .attr("x", d=>xScale(d.total)-xScale(0)+10)
-            .text(d => `$${self.local.format(d.total)} total`)
-            .append("tspan")
-            .attr("x", d=>xScale(d.total)-xScale(0)+10)
-            .attr("dy", "1.5em")
-            .text(d=> `in ${d.count} donations`)
-        
-        // append Y axis
-        svg
-            .append("g")
-            .attr("class", "axis")
-            .attr("transform", `translate(${xScale(0)},0)`)
-            .call(yAxis);    
-        }*/
+    
     }
     
 }

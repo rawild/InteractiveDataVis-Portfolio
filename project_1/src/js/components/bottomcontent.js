@@ -27,7 +27,7 @@ export default class BottomContent extends Component {
         self.element.selectAll("*").remove()
         let width = self.element.node().getBoundingClientRect().width
         let donors = store.state.donors
-        
+
         if (donors != null && donors.length > 0){
         let height= donors.length * 60
         donors = donors.sort((a,b) => d3.descending(a.total, b.total))
@@ -37,9 +37,12 @@ export default class BottomContent extends Component {
             console.log("candidate", candidate)
             d.candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
         })
-        self.element.append("p")
-            .attr("class", "subHeader")
-            .text("Donor Stats: " + store.state.donorPrettyPrint(donors[0].donor))
+        self.element.append("div")
+            .attr("class", "header-1")
+            .text(donors[0].donor)
+        self.element.append("div")
+            .attr("class", "header-3")
+            .text("Donation Statistics")
         
         let yScale = d3
             .scaleBand()

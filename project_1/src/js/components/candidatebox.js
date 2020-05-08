@@ -29,97 +29,56 @@ export default class CandidateBox extends Component {
         
         let politician = store.state.electeds.filter(elected => elected.Elected_Id == store.state.highlightPolitician)[0]
         let polSummary = store.state.candidateYear.filter(d => d.Candidate_ID == store.state.highlightPolitician)
-        console.log("politician", politician)
+        //console.log("politician", politician)
         console.log('polSummary', polSummary)
+        
+        // Add District header
+        self.element.append("div")
+            .attr("class", "header-1")
+            .text(politician.Role + " District "+ politician.District)
+        self.element.append("div")
+            .attr("class", "sub-header")
+            .text("Counties: "+politician.Counties)
+        // District Image
         let imagebox = self.element.append("div")
             .attr("class","image-box")
-            imagebox.append("img")
+        imagebox.append("img")
             .attr("src", "../data/img/a"+politician.District+".png")
             .attr("width", "150px")
+        // Politician Details
+        self.element.append("div")
+            .attr("class", "header-1")
+            .text(politician.First_Name + " " + politician.Last_Name)
+
+        let polRollUp = d3.rollups(
+            polSummary,
+            v => ({ 
+                "Total Money Received" : d3.sum(v, d => d.Total), 
+                "Average Donation" : d3.mean(v, d => d.Contribution_Avg),
+                "Number of Donors" : d3.sum(v, d => d.Donor_Count),
+                "Maximum Donation" : d3.max(v, d => d.Contribution_Max)
+             }), 
+            d => d.Candidate_ID,
+        );
+        let polSumData=Object.entries(polRollUp[0][1])
+        console.log("polRollUp", polSumData)
+        
+        self.element.selectAll("div.subHeader")
+            .data(Object.entries(polRollUp[0][1]))
+            .join("div")
+            .attr("class","subHeader")
+            .text(d => {
+                if (d[0] != "Number of Donors"){
+                    return d[0] + ": $" + d3.format(self.local.format)(d[1])
+                }
+                return d[0] + ": " + d3.format(self.local.format)(d[1])
+            })
         self.element.append("div")
             .attr("id","candidate-line")
         let candidateLineInstance = new CandidateLine()
         candidateLineInstance.render()
 
-        /*let donors = store.state.donors
-        if (donors != null){
-        let height= donors.length * 60
-        donors = donors.sort((a,b) => d3.descending(a.total, b.total))
-        // Scales for visualization
-        donors.forEach(d => {
-            let candidate = store.state.electeds.filter(elected => d.candidate  == elected.Elected_Id)
-            console.log("candidate", candidate)
-            d.candidate = candidate[0].First_Name + " " + candidate[0].Last_Name
-        })
-        self.element.append("p")
-            .attr("class", "subHeader")
-            .text("Donor Stats: " + store.state.donorPrettyPrint(donors[0].donor))
         
-        let yScale = d3
-            .scaleBand()
-            .domain(donors.map(d => d.candidate
-                ).reverse())
-            .range(donors.length > 1 ? [self.local.margin.top, height - self.local.margin.bottom]:[self.local.margin.top,60])
-            .paddingInner(self.local.paddingInner);
-        let xScale = d3
-            .scaleLinear()
-            .domain([0,d3.max(donors, d => d.total)])
-            .range([self.local.margin.left, self.local.width - self.local.margin.right]);
-        let yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(20);
-        // Shape Drawing Code 
-        // main svg square
-        let svg = self.element
-            .append("svg")
-            .attr("width", self.local.width)
-            .attr("height", height);
-        //append rects
-        let bars = svg
-            .selectAll("g.bar")
-            .data(donors, d => d.candidate+d.donor)
-            .join(
-                enter =>
-                    enter
-                    .append("g")
-                    .attr("class", "bar")
-                    .call(enter => enter.append("rect"))
-                    .call(enter => enter.append("text")),
-                    
-            update => update,
-            exit => exit.remove()
-            )
-        
-        bars
-            .transition()
-            .duration(self.local.duration)
-            .attr(
-                "transform",
-                d => `translate(${xScale(0)}, ${yScale(d.candidate)})`
-            )
-        bars
-            .select("rect")
-            .transition()
-            .duration(self.local.duration)
-            .attr("height", yScale.bandwidth())
-            .attr("width", d => xScale(d.total)- xScale(0))
-
-        bars
-            .select("text")
-            .attr("class","label")
-            .attr("dy", yScale.bandwidth()/2 -8 )
-            .attr("x", d=>xScale(d.total)-xScale(0)+10)
-            .text(d => `$${self.local.format(d.total)} total`)
-            .append("tspan")
-            .attr("x", d=>xScale(d.total)-xScale(0)+10)
-            .attr("dy", "1.5em")
-            .text(d=> `in ${d.count} donations`)
-        
-        // append Y axis
-        svg
-            .append("g")
-            .attr("class", "axis")
-            .attr("transform", `translate(${xScale(0)},0)`)
-            .call(yAxis);    
-        }*/
     }
     
 }
