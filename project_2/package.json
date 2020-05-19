@@ -1,0 +1,27 @@
+{
+  "name": "rollup-starter-app",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-dsv": "^2.0.1",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.16.2",
+    "rollup-plugin-terser": "^5.0.0",
+    "serve": "^11.0.2"
+  },
+  "dependencies": {
+    "d3": "^5.16.0",
+    "d3-array": "^2.4.0",
+    "date-fns": "^1.30.1",
+    "intersection-observer": "^0.10.0",
+    "scrollama": "^2.2.1",
+    "stickyfill": "^1.1.1-strict"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve public"
+  }
+}

@@ -1,0 +1,294 @@
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: 'Roboto', sans-serif;
+    padding: 1em 3em;
+    fill: #585c5e;
+    color: #585c5e;
+  }
+  p {
+    font-size: 12px;
+  }
+  a {
+    color: #585c5e;
+  }
+section {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+  .top {
+    width: 100%;
+    background: url(../data/img/newyork.jpg) top center no-repeat;
+    text-align: center;
+    min-height: 350px;
+  } 
+  .title {
+    opacity: 1;
+    font-family: 'Bree Serif', serif;
+    font-size: 140px;
+    margin: auto;
+    color: #585c5e;
+    width: 90%;
+    padding-top: 22%
+
+  }
+  .text {
+    width: 80%;
+    margin: auto
+  }
+  .tooltip {
+    display: block;
+    height: fit-content;
+    opacity: 0.9;
+    pointer-events: none;
+    padding-top: 15px;
+    border-radius: 10px;
+    text-align: left;
+    min-height: 20px;
+  }
+  
+  .header-1{
+    font-size: 50px;
+    font-family: 'Bree Serif', serif;
+  }
+  .header-2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px 0px 0px;
+  } 
+  .header-3{
+    font-weight: bold;
+    padding: 10px 10px 0px 0px;
+  } 
+  .subHeader{
+     font-size: 14px;
+ }
+ .subTitle {
+     padding-top: 5px;
+     font-size: 24px;
+ }
+
+ /* Number Header */
+ .big {
+   font-size: 72px;
+   font-weight: bold;
+ }
+ .bigger {
+   font-size: 50px;
+   font-weight: bold;
+ }
+ .middle-text {
+   text-align: center;
+   margin: 1rem;
+ }
+ .end-text {
+    line-height: 5rem;
+    margin: 0 1rem;
+ }
+ .bigger-middle-text {
+  text-align: center;
+  margin: 1rem;
+}
+ .bigger-end-text{
+  line-height: 3.5rem;
+  margin: 0 1rem;
+ }
+ #number-header {
+  margin: 2rem auto 3rem auto;
+  width: 80%;
+
+}
+.number {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.bottom {
+  width: 100%;
+}
+
+/* Charts */
+ .chart-title{
+   margin: 5px 30px;
+ }
+
+ .donortree {
+  fill: #103160;
+}
+.bar {
+  fill: #585c5e;
+}
+ .barHighlighted{
+  stroke: #2580ff;
+  stroke-width: 3;
+  fill: #2580ff;
+}
+.show-rect {
+  fill: #2580ff;
+}
+.barPolHighlight{
+  stroke: #E25822;
+  stroke-width: 3;
+  fill: #E25822;
+}
+
+ .tick {
+  fill: #364347;
+}
+.tick-donors{
+  font: bold 12px sans-serif;
+}
+.axis-label {
+  font-size: 14px;
+  fill: #585c5e;
+  text-anchor: middle;
+}
+.axis-bottom {
+    stroke:none;
+}
+.axis path,
+.axis line {
+fill: #364347;
+stroke: none;
+}
+
+.tree {
+  margin-left: 30px
+}
+
+
+.hidden {
+  display: none;
+  position: absolute;
+  z-index: -1;
+}
+.unhidden {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+
+#corruption {
+  width: 90%;
+  height: 800px;
+}
+
+/* Side Panel */
+
+ .article-title{
+   margin: 10px 10px;
+   font-size: 24px;
+ }
+ .corrupt-side{
+  margin-top: 200px;
+ }
+ .donor-side {
+   margin-top: 5px;
+   margin-bottom: 5px;
+ }
+ .candidate-side {
+  margin-top:5px;
+  margin-bottom: 0px;
+ }
+ .side-panel{
+   margin: 40px 10px 20px 10px;
+ }
+ .donor {
+  min-height: 650px;
+}
+.long {
+  min-height: 800px;
+}
+.candidate {
+  max-height: 350px
+}
+.candidate-body {
+  margin: 20px 10px 20px 10px;
+}
+
+/* scrolly step triggers*/
+
+.scrolly {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f3f3f3;
+  padding: 1rem;
+}
+
+.scrolly > * {
+  -webkit-box-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+article {
+  position: relative;
+  padding: 0 1rem;
+  max-width: 20rem;
+  min-width: 20rem;
+}
+
+figure {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  min-height: 500px;
+  margin: 0;
+  z-index: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+figure p {
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+
+.step {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+}
+
+.step a{
+  color: #fff;
+}
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step.is-active {
+  color:#585c5e;
+}
+.step.is-active a {
+  color:#585c5e;
+}
+
+.baby-step {
+  margin: 1rem auto 1rem auto;
+  background-color: none;
+  min-height: 200px;
+}
+
+.step p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+#corruption{
+  max-height: 600px
+}
+

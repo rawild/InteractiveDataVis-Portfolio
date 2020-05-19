@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head lang='en'>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width'>
+	<title>Who Pays NY</title>
+	<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+	<main>
+	<div class="top">
+		<div class="title">Who Pays?</div>
+		<div class="subTitle">Political Contributions to New York State Politicians 2015-2020</div>
+	</div>
+	<section >
+		<div class="text">
+		This data looks at the donations to state politicians representing the five boroughs of New York City from January 2015 to January 2020.
+		Statewide public officials were also included, including Andrea Stewart-Cousins, the Majority Leader of the Senate, 
+		and the four statewide offices: Governor, Lieutenant Governor, Attorney General, and Comptroller. 
+		You can explore the underlying data more on your own <a target="_blank" href="https://bit.ly/WhoPaysNY">with the WhoPaysNY Interactive Tool</a>.
+		</div>
+	</section>
+		<section id="number-header">
+		</section>
+		<section id="top-donors">
+			<article></article>
+		</section>
+		<section id="corrupt-scrolly"  class="scrolly">
+			<article>
+				<div class="step corrupt" data-step="A1">
+				</div>
+				<div class="step corrupt" data-step="A2">
+				</div>
+				<div class="step corrupt" data-step="A3">
+				</div>
+				<div class="step corrupt" data-step="A4">
+				</div>
+				<div class="step corrupt" data-step="A5">
+				</div>
+				<div class="step corrupt" data-step="A6">
+				</div>
+			</article>
+			<figure id="figurecorrupt">
+				<div id="donortree" class="unhidden"></div>
+				<div id="donortreedense"></div>
+			</figure>
+		</section>
+		<section id="biggestdonors">
+		</section>
+		<section id="donor-scrolly" class="scrolly">
+			<article>
+				<div class="step donor long" data-step="B1">
+					<div class="baby-step" baby-data="1"></div>
+					<div class="baby-step" baby-data="2"></div>
+					<div class="baby-step" baby-data="3"></div>
+				</div>
+				<div class="step donor" data-step="B2">
+				</div>
+				<div class="step donor" data-step="B3">
+				</div>
+				<div class="step donor long" data-step="B4">
+				</div>
+			</article>
+			<figure id="figuredonor">
+			</figure>
+		</section>
+		<section id="beneficiaries">
+		</section>
+		<section id="candidate-scrolly"  class="scrolly">
+			<article>
+				<div class="step candidate" data-step="C1">
+				</div>
+				<div class="step candidate" data-step="C2">
+				</div>
+				<div class="step candidate" data-step="C3">
+				</div>
+				<div class="step candidate" data-step="C4">
+				</div>
+				<div class="step candidate" data-step="C5">
+				</div>
+				<div class="step candidate" data-step="C6">
+				</div>
+				<div class="step candidate" data-step="C7">
+				</div>
+				<div class="step candidate" data-step="C8">
+				</div>
+				<div class="step candidate" data-step="C9">
+				</div>
+				<div class="step candidate" data-step="C10">
+				</div>
+			</article>
+			<figure id="figurecandidate">
+			</figure>
+		</section>
+		<section id="doesitmatter">
+		</section>
+		<section id="corruption">
+		</section>
+		<section id="closing">
+		</section>
+		<section id="methodology">
+			<div class="header-3">Methodology:</div> 
+				The donation data come from the New York State Board of Elections reports:
+                <a href="https://www.elections.ny.gov/CFViewReports.html" target="_blank">https://www.elections.ny.gov/CFViewReports.html</a>. The donations include those filed for candidates and their committees from January 2015 through the January 2020 
+                filing date. The candidates included are those politicians that currently represent the five boroughs in the state Senate and Assembly, plus the Majority Leader of the Senate, Andrea Stewart Cousins, and the four statewide posititions:
+                Governor, Lt. Governor, Comptroller, and Attorney General.   
+                
+                The donors were clustered accross different candidate's filings with the dedupe python library: <a href="https://github.com/dedupeio/dedupe">https://github.com/dedupeio/dedupe</a>. Additional
+                human review is on-going. The intention is to continue to improve the mapping and naming of the linked donors. There were some candidates that weren't included because they had no
+				filing committees that had recent filings clearly associated with their names. A review to include them is ongoing. If you would like to explore the underlying data in more detail
+				you can go to the <a href="https://bit.ly/WhoPaysNY">WhoPaysNY Interactive Tool</a>.
+		</section>
+	
+	</main>
+	<script src='bundle.js'></script>
+</body>
+</html>
