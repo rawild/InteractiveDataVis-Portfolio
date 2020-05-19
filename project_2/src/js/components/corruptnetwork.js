@@ -44,7 +44,7 @@ export default class CorruptNetwork extends Component {
             .hierarchy(store.state.cuomoDonors) // children accessor, tell it to grab the second element
         let links = root.links()
         let nodes = root.descendants()
-        console.log("nodes", nodes)
+        
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(150).strength(1))
             .force("charge", d3.forceManyBody().strength(-200))
@@ -110,7 +110,7 @@ export default class CorruptNetwork extends Component {
             .attr("viewBox", [-width / 2, -height / 2, width, height]);
         
         let link = svg.append("g")
-            .attr("stroke", "#999")
+            .attr("stroke", "#585c5e")
             .attr("stroke-opacity", 0.6)
             .selectAll("line")
                 .data(links)
