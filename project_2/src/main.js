@@ -103,7 +103,8 @@ function init() {
       <a href='https://nypost.com/2020/01/09/stringer-shuns-real-estate-money-for-mayor-bid-after-already-collecting-1m/' target='_blank'>become a fad</a>\
      for candidates running for mayor of New York City in 2021.<br><br>\
      The influence and organization of the wealthy requires that those of us who are not in the 1% organize together to fight for our interests.\
-     The New York City chapter of the Democratic Socialists of America, an organization that organizes working people to fight for policies that benefit\
+     The New York City chapter of the Democratic Socialists of America is an organization that the author organizes with. \
+     It organizes working people to fight for policies that benefit\
      regular people over the wealthy, has endorsed <a href='https://www.jacobinmag.com/2020/05/meet-new-yorks-socialist-insurgents' target='_blank'>\
      six candidates</a>, members of the organization who running to represent New York in 2020. They are all refusing corporate donations and \
      real estate money. In addition to Salazar, they include Samelys Lopez running to represent New York's 15th congressional district in the Bronx, \
