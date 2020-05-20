@@ -65,7 +65,10 @@ function init() {
      <br><br> In the last five years, Cuomo has gotten over \
     $894,400 directly from the healthcare organizations this provision protects, and the medical liability insurance companies that would \
     pay for settlements. Those donations are shown below. \
-    Note that this does not include any payments given by individuals who may own or occupy leadership positions in these corporations.")
+    Note that this does not include any payments given by individuals who may own or occupy leadership positions in these corporations. An\
+    example of this is David C. Rich, who is an executive in the Greater NY Hospital Association and has given more often than any other individual, totaling more than $900,000\
+    in the last five years. <a href='https://www.nytimes.com/2019/08/26/nyregion/new-york-lobbying.html' target='_blank'>\
+    Here is a story that The New York Times did about him last August.</a> ")
     
     let corruptNetwork = new CorruptNetwork()
     corruptNetwork.render()
