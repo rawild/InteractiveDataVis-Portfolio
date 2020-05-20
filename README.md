@@ -7,6 +7,7 @@ The 2016 race totally transformed what what was considered possible via small do
 ### [Long Abstract](./project_1/abstract.md)
 ### [Early Mockup of the Project](./project_1/Sketches_Mockups/landing_page.png)
 ### [Technical Documentation - todo]()
+### [View on github](https://github.com/rawild/InteractiveDataVis-Portfolio/tree/master/project_1)
 
 ## [Who Pays NY? A Narrative](https://rawild.github.io/InteractiveDataVis-Portfolio/project_2/public)
 <a href="https://rawild.github.io/InteractiveDataVis-Portfolio/project_2/public/" target="_blank" ><img src="https://raw.githubusercontent.com/rawild/InteractiveDataVis-Portfolio/master/project_2/Sketches_Mockups/Final_screenshot.png"></a>
@@ -16,6 +17,8 @@ It became clear working with the campaign finance data for the <a href="https://
 
 ### [Long Abstract](./project_2/abstract.md)
 ### [Early Mockup of the Project](./project_2/Sketches_Mockups/scrolly_sketch_2.jpg)
+### [View on github](https://github.com/rawild/InteractiveDataVis-Portfolio/tree/master/project_2)
+
 
 ### [Reflection on Projects - todo]()
 (This was for the DATA73200 class at the CUNY Graduate Center.) 
