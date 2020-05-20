@@ -32,11 +32,11 @@ export default class CorruptNetwork extends Component {
         /* Get the donor bar chart data*/ 
         self.element.append("div")
             .attr("class","header-2")
-            .text("Explore Cuomo's $890K from 90 Healthcare Organizations")
+            .text("Explore Cuomo's $894K from 90 Healthcare Organizations")
         self.element.append("div")
             .text("You can move the donors around if they get in the way.")
         
-        let donorColors = d3.scaleSequential(d3.interpolatePuBu).domain([0, 90])
+        let donorColors = d3.scaleSequential(d3.interpolatePuBu).domain([-50, 90])
         
 
         /* Tree adapted from: M Bostock - https://observablehq.com/@d3/force-directed-tree */
@@ -72,7 +72,8 @@ export default class CorruptNetwork extends Component {
                 if(d.children){
                     innerTableContent =
                         "<tr>"+
-                        "<th scope='row'>"+d.data.name+"</th><td> recieved $"+self.local.format(d.data.total)+"</td>"+
+                        "<th scope='row'> Andrew "+d.data.name+"</th><td> recieved $"+self.local.format(d.data.total)+
+                        "from all these donors</td>"+
                         "</tr>"
 
                 }else{
@@ -96,7 +97,7 @@ export default class CorruptNetwork extends Component {
             d3.select("#circle"+d.index)
                 .transition()
                 .duration(self.local.duration)
-                .attr("r", d=>d.children?10:d.data.total/1000)
+                .attr("r", d=>d.children?20:d.data.total/1000)
             Tooltip.transition()
                 .duration(self.local.duration)
                 .style("opacity", 0);
@@ -124,9 +125,9 @@ export default class CorruptNetwork extends Component {
             .selectAll("circle")
                 .data(nodes)
                 .join("circle")
-                    .attr("fill", d => d.children ? null : donorColors(90-d.index))
+                    .attr("fill", d => d.children ? "#E25822" : donorColors(90-d.index))
                     .attr("stroke", d => d.children ? null : "#000")
-                    .attr("r", d => d.children ? 10 : d.data.total/1000)
+                    .attr("r", d => d.children ? 20 : d.data.total/1000)
                     .attr("id",d=>"circle"+d.index)
                     .on("mouseover", mouseover)
                     .on("mouseout", mouseout)

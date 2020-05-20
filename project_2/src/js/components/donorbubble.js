@@ -76,6 +76,8 @@ export default class DonorBubble extends Component {
         leaf
             .append("circle")
             .attr("fill-opacity", 0.9)
+            .attr("stroke", "#000")
+            .attr("stroke-width", 2.5)
             .attr("fill", d => store.state.candidateColors(d.data[1].donations[0].Candidate_ID)) // take the genre from the first one in the group
             .attr("r", d => d.r)
         leaf
@@ -88,7 +90,7 @@ export default class DonorBubble extends Component {
                     store.state.electeds.filter(x => x.Elected_Id == d.data[1].donations[0].Candidate_ID)[0].First_Name
                     )
                 })
-            .attr("dy", "-1.1em")
+            .attr("dy", "-1.2em")
             .style("text-anchor", "middle")
             .attr("font-family",  "Gill Sans", "Gill Sans MT")
             .attr("font-size", "14")
@@ -115,7 +117,7 @@ export default class DonorBubble extends Component {
                 }
                 return "$" + self.local.format(d.data[1].Total)
                 })
-            .attr("dy", "1.1em")
+            .attr("dy", "1.2em")
             .style("text-anchor", "middle")
             .attr("font-family",  "Gill Sans", "Gill Sans MT")
             .attr("font-size", "14")

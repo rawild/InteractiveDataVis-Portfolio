@@ -53,46 +53,46 @@ export default class CandidateScrolly extends Component {
         let candidateSide1 = new SidePanel('C1')
         candidateSide1.render("$$ Proportional to Power", "These are the nine politicians who received more than $1,500,000.  \
         How much money you got seems proportional to the amount\
-         of power you have in Albany. Andrew Cuomo, the Governor, has a massive amount of power in Albany, and recieved\
-         45% of the total money in the last 5 years. You can investigate the donors who paid Cuomo compared to the other politicians\
+         of power you have in Albany. Andrew Cuomo, the governor, has a massive amount of power, and received\
+         45% of the total money in the last five years. You can investigate the donors who paid Cuomo compared to other politicians\
          <a target='_blank' href='https://bit.ly/WhoPaysNY'> with this tool</a>.","candidate-side")
 
         let candidateSide2 = new SidePanel('C2')
-        candidateSide2.render("The Governor: 45% of the money, 45% of the power", "The Governor has immense control over the\
-        budgeting process, which has become an 'Omnibus' process where any kind of bill can get forced into the budget if\
-        they are part of the Governor's legislative priority. The budget has to pass, and thus it is a way to force legislation through.\
-        Additionally, before from 2015-2018, the Senate was held by Republicans and\
-        the Assembly by the Democrats. This gave more power to the Governor as the 'deal-maker.'","candidate-side","candidate-body")
+        candidateSide2.render("The Governor: 45% of the money, 45% of the power", "The governor has immense control over the\
+        budgeting process, which has become an 'omnibus' process where the governor stuffs his legislative priorities.\
+        The budget has to pass, and thus, it is a way to force legislation through.\
+        Additionally, from 2012 to 2018, the State Senate was held by Republicans and\
+        the Assembly by the Democrats. This gave more power to the Governor as the 'dealmaker.'","candidate-side","candidate-body")
 
         let candidateSide3 = new SidePanel('C3')
-        candidateSide3.render("The State Attorney General:", "As a state-wide office, this position\
-         has a lot of power of determining which \
-        illegal actors to pursue statewide, whether negligent landlords, or healthcare providers who are scamming Medicaid.\
-        It also generally costs a lot of money to win a statewide office, especially if it is a contested race and you are not incumbent.\
+        candidateSide3.render("The State Attorney General:", "As a statewide office, this position\
+         has a lot of power to determine which \
+        illegal actors to pursue, whether negligent landlords or healthcare providers who are scamming Medicaid.\
+        It also generally costs a lot of money to win a statewide office, especially if it is a contested race and you are not the incumbent.\
         Leticia James was first elected in 2018 in\
-         a race hotly contested by Zephyr Teachout.  $4 million donations came in 2018 around that race.","candidate-side","candidate-body")
+         a hotly contested race with Zephyr Teachout. She received $4 million in donations in that race.","candidate-side","candidate-body")
 
         let candidateSide4 = new SidePanel('C4')
-        candidateSide4.render("The State Comptroller:", "As a state-wide office, this position\
-         has a lot of power in review the finances of the state and making recommendations to the Legislature and Governor about finances.\
-        The comptroller has, despite reporting budget deficits, only recommended cuts to services, including to Medicaid during\
-        the COVID-19 pandemic.  The comptroller could recommend raising taxes on the wealthy or corporations, but has not ever done so.\
-        Many of these donors would have to pay more in these kinds of taxes, were they to be implemented.","candidate-side","candidate-body")
+        candidateSide4.render("The State Comptroller:", "As a statewide office, this position\
+         has a lot of power to review the finances of the state and to make recommendations to the legislature and governor.\
+         Despite reporting budget deficits for years, DiNapoli has only ever recommended cuts to services. This includes cuts to Medicaid during\
+         the COVID-19 pandemic. The comptroller could recommend raising taxes on the wealthy or corporations, but has not ever done so.\
+         If he did and they were implemented, many of these donors would have to pay more in taxes.","candidate-side","candidate-body")
         
         let candidateSide5 = new SidePanel('C5')
         candidateSide5.render("The Speaker of the Assembly:", "This position has control over commmittee appointments, Community Fund\
-         spending, and the agenda for the Assembly. The Speaker decides what bills will be voted on where. While the Assembly has\
-          a large majority Democrat and theoretically could, bring votes from the floor, members that contradict the speaker put\
-          community funding in their district and their committee appointments in jeopardy. The Speaker is also \
-          the sole representative of the Assembly during the final budget negotiations with the Governor and the Majority Leader\
+         spending, and the agenda for the Assembly. The speaker decides what bills will be voted on when. The Assembly is\
+          majority Democrat, and theoretically, members could bring votes from the floor. But members who challenge the speaker endanger \
+          their committee appointments and community funding in their district. The speaker is also \
+          the sole representative of the Assembly during final budget negotiations with the governor and the majority leader\
           of the Senate.","candidate-side","candidate-body")
 
         let candidateSide6 = new SidePanel('C6')
-        candidateSide6.render("The Lieutenant Governor:", "This is a statewide position that can set the agenda for the state Senate, \
-        make committee appointments in that body, and vote in case of a tie. As President of the Senate, The Lt. Governor has a deciding vote if the body is split.\
-        for 2015-2018, when a group of Democrats caucused with the Republicans to give them a narrow majority, the Lt. Governor was\
+        candidateSide6.render("The Lieutenant Governor:", "This is a statewide position that can set the agenda for the State Senate, \
+        make committee appointments in that body, and vote in case of a tie.\
+        Between 2012 to 2018, a group of Democrats caucused with the Republicans, giving them a narrow majority. At that time, the lieutenant governor was\
         influential in managing the agenda of the body. Kathy Hochul also ran a very close race for re-election in 2018 against\
-        Jumaane Williams. $3 million of her donations came in 2018 around that race.","candidate-side","candidate-body")
+        Jumaane Williams. $2,296,000 of her donations came from that race.","candidate-side","candidate-body")
         
         let candidateSide7 = new SidePanel('C7')
         candidateSide7.render("The Majority Leader of the Senate:", "The majority leader of the Senate, in the absence of the Lt. Governor\

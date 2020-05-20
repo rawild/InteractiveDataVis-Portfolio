@@ -76,22 +76,22 @@ export default class QuartileTree extends Component {
             .attr("height", d => d.y1 - d.y0)
             .attr("class", d=> {
                 if (d.data[0] =="bottom") {
-                    return "quartile-1 donortree"
+                    return "quartile-1 donortree quartiletree"
                 }  
                 if (d.data[0] == "low-middle"){
-                    return "quartile-2 donortree"
+                    return "quartile-2 donortree quartiletree"
                 }
                 if (d.data[0] == "high-middle"){
-                    return "quartile-3 donortree"
+                    return "quartile-3 donortree quartiletree"
                 }
                 if (d.data[0] == "top"){
-                    return "quartile-4 donortree"
+                    return "quartile-4 donortree quartiletree"
                 }
                 if (d.data[0] =="bottom-half") {
-                    return "bottom-half donortree"
+                    return "bottom-half donortree "
                 }
                 if (d.data[0] =="top-half") {
-                    return "top-half donortree"
+                    return "top-half donortree "
                 }
             })
             

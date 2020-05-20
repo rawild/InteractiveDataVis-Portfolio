@@ -125,16 +125,16 @@ export default class DonorScrolly extends Component {
             2015 and 2020. Some of them are surprising.","donor-side")
 
             let donorSide2 = new SidePanel('B2')
-            donorSide2.render('The NYC Campaign Finance Board: $2,232,391' , "What is the NYC campaign finance board?\
-            It's the government agency that pays matching funds to qualifying candidates who run in city \
-            elections as part of the city's public financing for elections. Why does money from city elections\
-            show up here? In the 2015-2020 time period, all of these candidates ran for Public Advocate. The matching\
-            funds that they raised are transferrable to other races if they have funds left over.","donor-side")
+            donorSide2.render('The N.Y.C. Campaign Finance Board: $2,232,391' , "New York City provides public financing to candidates.\
+            The N.Y.C. Campaign Finance Board is the government agency that pays matching funds to qualifying candidates who run in city \
+            elections. Why does money from city elections\
+            show up in donations to state politicians? Between 2015 and 2020, all of these politicians ran for public advocate. Any matching\
+            funds they had left over are transferrable to other races.","donor-side")
 
             let donorSide3 = new SidePanel('B3')
-            donorSide3.render('The LAWPAC of NY: $1,275,160' , "What is the LAWPAC and why do trial\
+            donorSide3.render('The LAWPAC of NY: $1,275,160' , "What is the LAWPAC, and why do trial\
             lawyers spend so much money on candidates? The LAWPAC represents trial lawyers who earn their\
-            living by helping people to sue for liability. In the last 5 years there were many contested\
+            living by helping people to sue for liability. In the last five years, there were many contested\
             laws about who is liable for what. See Carlos' Law as an example. There are also bills before the\
             state legislature to limit the percentage that trial lawyers can get paid from a settlement.\
             <br><br>The LAWPAC casts a broad net donating 439 times total, including at least one donation to 79 of\
@@ -146,15 +146,15 @@ export default class DonorScrolly extends Component {
             let donorSide4 = new SidePanel('B4')
             donorSide4.render('1199 SEIU United Healthcare Workers: $989,150', "1199 SEIU is a local of the Service\
             Employees International Union for New York state and many other east coast states. Their union members\
-            include home health aides, janitors, pharmacicts, techs, lab workers, nurse aides, house cleaners, social workers\
-            and many other healthcare workers.  They are the major union behind the fight for $15 nationwide, which in 2016, \
-            won legislation in New York. They also were a big part of the Green Light NY Coalition that won access to drivers \
-            licenses for undocumented people in NY in 2019.<br><br> Similar to the LAWPAC, 1199 SEIU casts a wide net, having\
-            donated to 82 of the 86 candidates. They seem to spread their money around a little more than the LAWPAC, however.\
-            The average amount that they paid to a politician in the last 5 years was $4,300. Still it definitely is skewed\
-            as the maximum amount that they paid to a politician was $50,000. Unlike trial lawyers, most of the members\
-            of 1199SIEU are low paid. While they could also donate as individuals, it seems unlikely that a significant\
-            portion of them have the disposable income to throw around.","donor-side")
+            include home health aides, janitors, pharmacists, techs, lab workers, nurse aides, house cleaners, social workers,\
+            and many other healthcare workers. They are the major union behind the Fight for $15 nationwide, and in 2016,\
+            won a gradual increase in the minimum wage in New York. They also were a big part of the Green Light NY Coalition that won access to driver's \
+            licenses for undocumented people in New York in 2019.<br><br> Similar to the LAWPAC, 1199 SEIU casts a wide net, and\
+            donated to 82 of the 86 candidates. The average amount that they paid to a politician in the last 5 years was $4,300,\
+            and they seem to spread their money around a little more than the LAWPAC, however. Still their donations are skewed\
+            towards the top. The maximum amount they paid to a politician was $50,000. Unlike trial lawyers, most of the members\
+            of 1199 SIEU are low paid. It seems unlikely that a significant\
+            portion of them have the disposable income to throw around to donate as individuals.","donor-side")
 
             /**  helper functions */
             function handleBabyStepEnter(response) {
@@ -165,9 +165,9 @@ export default class DonorScrolly extends Component {
                     let side = d3.select("[baby-data = \"1\"]")
                     side.append("div")
                         .classed("header-2",true)
-                        .text("#1 The N.Y.C Campaign Finance Board (????)")
+                        .text("#1 The N.Y.C. Campaign Finance Board (????)")
                     side.append("div")
-                        .text("Yep, that's right, the biggest single donor in the last five years was the New York City \
+                        .text("Yep, that's right. The single biggest donor in the last five years was the New York City \
                         Campaign Finance Board. This is due to the public financing of citywide elections. \
                         Confused? Will explain below.")
                 } else if (response.index == 1) {
@@ -178,8 +178,9 @@ export default class DonorScrolly extends Component {
                         .classed("header-2",true)
                         .text("#2 The LAWPAC?")
                     side.append("div")
-                        .text("This is one of two Trial Lawyers Associations for New York. Trial lawyers help people sue \
-                        over liability for accidents and care about the exact laws on the books. More info below.")
+                        .text("This is one of two trial lawyers associations in New York. Trial lawyers help\
+                        people sue after an accident, for example. They care about liability, and the exact laws on the books.\
+                        More info below.")
                 } else if (response.index == 2) {
                     d3.select('#donor196')
                         .classed("barHighlighted", true)
@@ -188,7 +189,7 @@ export default class DonorScrolly extends Component {
                         .classed("header-2",true)
                         .text("#3 1199 SEIU?")
                     side.append("div")
-                        .text("1199 SEIU is a local of the Service Employees International Union that represents health care workers\
+                        .text("1199 SEIU is a local of the Service Employees International Union that represents healthcare workers\
                         in New York and other states. More info below.")
                 }
 

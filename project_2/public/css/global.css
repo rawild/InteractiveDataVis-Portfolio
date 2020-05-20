@@ -110,25 +110,35 @@ section {
    margin: 5px 30px;
  }
 
- .donortree {
+ .quartiletree {
+  stroke: #103160;
+  stroke-width: 2.5
+}
+.donortree {
   fill: #103160;
 }
 .bar {
   fill: #585c5e;
 }
  .barHighlighted{
-  stroke: #2580ff;
-  stroke-width: 3;
-  fill: #2580ff;
-}
-.show-rect {
+  stroke: #000;
+  stroke-width: 2.5;
   fill: #2580ff;
 }
 .barPolHighlight{
-  stroke: #E25822;
-  stroke-width: 3;
+  stroke: #000;
+  stroke-width: 2.5;
   fill: #E25822;
 }
+.show-rect {
+  fill: #2580ff;
+  stroke: #2580ff;
+  stroke-width: 2.5; 
+}
+.show-rect-half {
+  fill: #2580ff;
+}
+
 
  .tick {
   fill: #364347;

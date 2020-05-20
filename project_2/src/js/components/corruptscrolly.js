@@ -66,44 +66,46 @@ export default class CorruptScrolly extends Component {
             corruptSide1.render("The Total: $104,006,269","This is all of the donations by all of the donors. \
             The bigger boxes are the donors who gave the most. \
             As you can see, some donors gave a lot more money than others.\
-            In fact many of the smallest boxes are so small you can\'t see them. Over\
-            a half of the donors are not visible here becuse they are so small. The total distribution of donations\
+            In fact, many of the smallest boxes are so small you can\'t see them. Over\
+            half of the donors are not visible here because they are so small. The total distribution of donations\
             is similar to the total distribution of wealth in the city, with an extremely high concentration in the\
             top 1%.", "corrupt-side")
 
         let corruptSide2 = new SidePanel('A2')
-            corruptSide2.render("The smallest quarter: $223,821","This is the total sum of the donations by \
-            the twenty-five percent of donors who gave less than $40. \
-            As you can see, even though it is 13,340 donors, it is not a lot of money compared to \
-            the total. In all it adds up to about 0.2%.","corrupt-side")
+            corruptSide2.render("The bottom quarter: $223,821","This is the total sum of donations from \
+            the 25% of donors who gave less than $40. \
+            In all, the donations of these 13,340 donors add up to about 0.2% of\
+            the total. Not a lot.","corrupt-side")
 
         let corruptSide3 = new SidePanel('A3')
-            corruptSide3.render("The low-middle quarter: $1,048,338","This is the total sum of the donations by \
-            the twenty-five percent of donors who gave between $40 and $100 dollars. \
+            corruptSide3.render("The lower-middle quarter: $1,048,338","This is the total sum of the donations from \
+            the 25% of donors who gave between $40 and $100 dollars. \
             These 13,340 donors contributed about 1% of the total.","corrupt-side")
 
         let corruptSide4 = new SidePanel('A4')
-            corruptSide4.render("The upper-middle quarter: $4,219,958","This is the total sum of the donations by \
-            the twenty-five percent of donors who gave between $100 and $500 dollars. \
-            These are the donors who gave a total donation amount that was between 50% and 75% of the largest donations. \
-            It still accounts for a fairly small amount over all, about 4%.","corrupt-side")
+            corruptSide4.render("The upper-middle quarter: $4,219,958","This is the total sum of the donations from \
+            the 25% of donors who gave between $100 and $500 dollars. This is a large amount.\
+            75% of total donor contributions in this period were less than $500.\
+            Comparatively, it still accounts for a fairly small amount of overall donations, about 4%.\
+            ","corrupt-side")
 
         let corruptSide5 = new SidePanel('A5')
-            corruptSide5.render("The top quarter of donors: $98,515,179","This is the total sum of the donations by \
-            the twenty-five percent of donors who gave over $500 dollars. \
-            These donors, while only a quarter of the overall donations, account for the vast majority of the donations.\
-            In total they contributed about 95% of the money.<br><br> I don't know about you but I don't have $500 to throw around\
-            to random politicians. A lot of these donations are small businesses in politician's districts, and people with\
-            lots of money: doctors, lawyers, landlords, finance industry people, and c-level executives of organizations.",
+            corruptSide5.render("The top quarter: $98,515,179","This is the total sum of the donations by \
+            the 25% of donors who gave over $500 dollars. \
+            This top quarter of donors accounts for the vast majority of the donations.\
+            In total they contributed about 95% of the money.<br><br> I don't know about you, but I don't have $500 to throw around\
+            to random politicians. A lot of these donors are small businesses in politicians' districts, and people with\
+            lots of money: doctors, lawyers, landlords, finance industry people, and C-level executives of organizations.",
             "corrupt-side")
         
         let corruptSide6 = new SidePanel('A6')
-            corruptSide6.render("The Top 1%: $52,004,298","429 Donors accounted for $52,004,298. All 429 of these donors\
-            gave over $46,250.  Who are the 429? Most of them are organizations. Some of\
-            them represent working people, but many of them represent wealthy people who want to increase or protect their wealth.\
-            These 429, while only 0.8% of the donors, account for 50% of the money. It is worth noting that individuals with means\
-            often donate in diffuse ways through many different PAC's and LLC's, while individuals without a lot of extra money donate\
-            via concetrated groups, like their Union.",
+            corruptSide6.render("The Top 0.8%: $52,004,298","429 donors gave $52,004,298. While only 0.8% of the donors, \
+            they contributed 50% of the money. All 429 of these donors\
+            gave over $46,250. <br><br>Who are the 429? Most of them are organizations. Some of\
+            them represent working people, but many of them represent wealthy people, who want to increase or protect their wealth.\
+            Individuals with means often donate in diffuse ways through many different PAC's and LLC's,\
+            while individuals without a lot of extra money donate\
+            via concetrated groups, like their unions.",
             "corrupt-side")
 
 
@@ -165,7 +167,7 @@ export default class CorruptScrolly extends Component {
                     .html(`429 Donors account for 50% of the money.`)
                 
                 d3.select("#donortreedense").selectAll(".top-half")
-                    .classed("show-rect", true)
+                    .classed("show-rect-half", true)
             }
 
         }

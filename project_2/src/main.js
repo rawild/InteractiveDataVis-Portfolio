@@ -41,14 +41,14 @@ function init() {
     corruptScrolly.render()
     
     let biggestdonors = new SectionHeader("biggestdonors")
-    biggestdonors.render("Who Pays Thousands of $$$?", "The vast majority of the money comes from people with more than $500\
-    to throw around. What about those top 1%-ers? Who are those 429 donors? Who do they represent? What do they want?")
+    biggestdonors.render("Who Pays Thousands of $$$?", "The majority of political donations comes from people with more than $500\
+    to throw around. Who are those 429 donors? Who do they represent? What do they want?")
     
     let donorScrolly=new DonorScrolly()
     donorScrolly.render()
     
     let beneficiaries = new SectionHeader("beneficiaries")
-    beneficiaries.render("Who Benefits?", "$100 million is a lot of money. Where is it going? Who has \"earned\" it?")
+    beneficiaries.render("Who Benefits?", "$104 million is a lot of money. Where is it going? Who has \"earned\" it?")
 
     let candidateScrolly = new CandidateScrolly()
     candidateScrolly.render()
