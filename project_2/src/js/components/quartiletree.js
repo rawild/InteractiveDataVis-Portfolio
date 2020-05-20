@@ -31,7 +31,7 @@ export default class QuartileTree extends Component {
         /* Get the donor bar chart data*/ 
         self.element.append("div")
             .attr("class","header-2 chart-title tree-title")
-            .text("$"+ self.local.format(store.state.summary.total_money) +" from 53,361 Donors")
+            .text("$"+ self.local.format(store.state.summary.total_money) +" from 53,361 donors")
         
         let quartiles = []
         if (data.length > 0) {
@@ -106,7 +106,7 @@ export default class QuartileTree extends Component {
                 }
             })
             .attr("dy", "17em")
-            .attr("dx", d => d.data[0] == "top-half" ? "3.5em" : "4em")
+            .attr("dx", d => d.data[0] == "top-half" ? "3.5em" : "4.2em")
             .style("text-anchor", "middle")
             .attr("font-family",  "Gill Sans", "Gill Sans MT")
             .attr("font-size", "24")

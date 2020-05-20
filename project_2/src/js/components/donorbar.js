@@ -85,7 +85,7 @@ export default class DonorBar extends Component {
         bars
             .select("text")
             .attr("class","label")
-            .attr("dy", yScale.bandwidth()/2+4)
+            .attr("dy", yScale.bandwidth()/2+5)
             .attr("x", d=>xScale(d[1])-xScale(0)+10)
             .text(d => `$${self.local.format(d[1])}`)
         

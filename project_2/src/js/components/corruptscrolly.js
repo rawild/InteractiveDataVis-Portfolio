@@ -67,8 +67,8 @@ export default class CorruptScrolly extends Component {
             The bigger boxes are the donors who gave the most. \
             As you can see, some donors gave a lot more money than others.\
             In fact, many of the smallest boxes are so small you can\'t see them. Over\
-            half of the donors are not visible here because they are so small. The total distribution of donations\
-            is similar to the total distribution of wealth in the city, with an extremely high concentration in the\
+            half of the donors are not visible here because they are so small. The stratification of donations\
+            is similar to the stratificiation of wealth in the city, with an extremely high concentration in the\
             top 1%.", "corrupt-side")
 
         let corruptSide2 = new SidePanel('A2')
@@ -146,14 +146,14 @@ export default class CorruptScrolly extends Component {
                 donorTree.unhide()
                 donorTreeDense.hide()
                 d3.selectAll(".tree-title")
-                    .html(`$104,006,296 from 53,361 Donors`)
+                    .html(`$104,006,296 from 53,361 donors`)
             }
             else if (response.index > 0 && response.index < 5){
                 donorTree.hide()
                 donorTreeDense.unhide()
                 donorTreeDense.render([])
                 d3.selectAll(".tree-title")
-                    .html(`25% of the Donors gave ${totals[response.index-1].value}. They account for ${totals[response.index-1].total}.`)
+                    .html(`25% of the donors gave ${totals[response.index-1].value}. They account for ${totals[response.index-1].total}.`)
                 d3.select("#donortreedense")
                     .selectAll("rect")
                         .classed("show-rect", false)
@@ -164,7 +164,7 @@ export default class CorruptScrolly extends Component {
                 let halves = [{Quartile: "top-half", Total: 52004298},{Quartile: "bottom-half", Total: 52001998}]
                 donorTreeDense.render(halves)
                 d3.selectAll(".tree-title")
-                    .html(`429 Donors account for 50% of the money.`)
+                    .html(`429 donors account for 50% of the money.`)
                 
                 d3.select("#donortreedense").selectAll(".top-half")
                     .classed("show-rect-half", true)

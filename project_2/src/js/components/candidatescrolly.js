@@ -62,7 +62,7 @@ export default class CandidateScrolly extends Component {
         budgeting process, which has become an 'omnibus' process where the governor stuffs his legislative priorities.\
         The budget has to pass, and thus, it is a way to force legislation through.\
         Additionally, from 2012 to 2018, the State Senate was held by Republicans and\
-        the Assembly by the Democrats. This gave more power to the Governor as the 'dealmaker.'","candidate-side","candidate-body")
+        the Assembly by the Democrats. This gave the governor more power as the 'dealmaker.'","candidate-side","candidate-body")
 
         let candidateSide3 = new SidePanel('C3')
         candidateSide3.render("The State Attorney General:", "As a statewide office, this position\
@@ -90,36 +90,36 @@ export default class CandidateScrolly extends Component {
         let candidateSide6 = new SidePanel('C6')
         candidateSide6.render("The Lieutenant Governor:", "This is a statewide position that can set the agenda for the State Senate, \
         make committee appointments in that body, and vote in case of a tie.\
-        Between 2012 to 2018, a group of Democrats caucused with the Republicans, giving them a narrow majority. At that time, the lieutenant governor was\
+        Between 2012 to 2018, a group of Democrats joined with the Republicans, giving them a narrow majority. At that time, the lieutenant governor was\
         influential in managing the agenda of the body. Kathy Hochul also ran a very close race for re-election in 2018 against\
         Jumaane Williams. $2,296,000 of her donations came from that race.","candidate-side","candidate-body")
         
         let candidateSide7 = new SidePanel('C7')
-        candidateSide7.render("The Majority Leader of the Senate:", "The majority leader of the Senate, in the absence of the Lt. Governor\
-        has all the powers of the Lt. Governor, including setting the agenda of the Senate, and making committee appointments. Similar to\
-        the Speaker of the Assembly the Majority Leader has traditionally been the sole representative of the Senate during the final\
-        budget negotiations with the Governor and the Speaker of the Assembly. After getting elected Speaker in 2018, Stewart-Cousins'\
+        candidateSide7.render("The Majority Leader of the Senate:", "In the absence of the lieutenant governor, the majority leader of the State Senate\
+        sets the agenda of the senate and makes committee appointments. Similar to\
+        the speaker of the Assembly, the majority leader has traditionally been the sole representative of the senate during the final\
+        budget negotiations with the governor. After getting elected speaker in 2018, Stewart-Cousins'\
         yearly reciepts doubled.","candidate-side","candidate-body")
 
         let candidateSide8 = new SidePanel('C8')
-        candidateSide8.render("The Deputy Majority Leader of the Senate:", "The deputy majority leader of the Senate, presumably has\
-        influence within the caucus and in the run of procedure in the Senate. Michael Gianaris also seriously prepared to run for\
-        state Attorney General in the 2018 election. That prepartion most certainly included a lot of fundraising.  Gianaris is\
-        also Chair of the Democratic Senate Campaign Committee that provides funds to re-elect members of the Democratic senate\
-        conference.","candidate-side","candidate-body")
+        candidateSide8.render("The Deputy Majority Leader of the Senate:", "The deputy majority leader of the State Senate presumably has\
+        influence within the Democratic conference and in senate procedure. Michael Gianaris also seriously contemplated a run for\
+        state attorney general in the 2018 election, but pulled out after Leticia James entered the race. That prepartion most certainly\
+        included a lot of fundraising. Gianaris is also chair of the Democratic Senate Campaign Committee that provides funds to\
+        re-elect members of the Democratic senate conference.","candidate-side","candidate-body")
         
         let candidateSide9 = new SidePanel('C9')
-        candidateSide9.render("Running for Higher Office:", "Michael Blake is an Assemblyperson who was elected to represent the Bronx in 2014.\
-        He held cabinet positions in the Obama administration, and was appointed vice-chair of the Democratic National Committee in 2017. He \
-        ran for Public Advocate in 2018, recieving $838,016 in matching funds from the city in that race. He is currently running for Congress\
-        in the NY 15th district.","candidate-side","candidate-body")
+        candidateSide9.render("Running for Higher Office:", "Michael Blake is an assemblyperson first elected to represent the Bronx in 2014.\
+        He previously held cabinet positions in the Obama administration, and was then appointed vice-chair of the Democratic National Committee in 2017. He \
+        ran for public advocate in 2018, recieving $838,016 in matching funds from the city in that race. He is currently running for Congress\
+        in New York's 15th district.","candidate-side","candidate-body")
 
         let candidateSide10 = new SidePanel('C10')
-        candidateSide10.render("Vestiges of the IDC Break-off Democrats:", "Diane Savino, a state Senator whose district covers both Staten Island and Brooklyn,\
-         is <a target='_blank' href='https://www.vox.com/policy-and-politics/2018/9/14/17859200/idc-new-york-primaries-democrats-biaggi-klein'>one of two of the\
-          break-off Democrats to survive challengers in the 2018 elections </a>. The break-off Democrats defected from the\
-          Democratic party from 2012-2018 to give the Republicans control of the Senate. As a result, these individuals had a lot of \
-        influence both on getting more money spent in their districts, and the budget and overall agenda of the Senate.","candidate-side",
+        candidateSide10.render("Vestiges of the Break-Off Democrats:", "Diane Savino, a state senator whose district covers both Staten Island and Brooklyn,\
+         is <a target='_blank' href='https://www.vox.com/policy-and-politics/2018/9/14/17859200/idc-new-york-primaries-democrats-biaggi-klein'>one of two\
+        break-off Democrats to survive challengers in the 2018 elections </a>. The break-off Democrats, called the Independent Democratic Conference (IDC),\
+        defected from the Democratic conference from 2012 to 2018 to give the Republicans control of the State Senate. As a result, these individuals had a lot of \
+        influence in the budget, the overall agenda of the senate, and getting money spent in their districts.","candidate-side",
         "candidate-body")
 
         /** helper functions */

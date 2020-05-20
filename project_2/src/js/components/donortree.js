@@ -32,7 +32,7 @@ export default class DonorTree extends Component {
         /* Get the donor bar chart data*/ 
         self.element.append("div")
             .attr("class","header-2 chart-title tree-title")
-            .text("$"+ self.local.format(store.state.summary.total_money) +" from " + self.local.format(store.state.donors.length) + " Donors")
+            .text("$"+ self.local.format(store.state.summary.total_money) +" from " + self.local.format(store.state.donors.length) + " donors")
 
         let donors_rollup = d3array.rollups(store.state.donors,  
             v =>  ({Total: d3.sum(v, d => d.Total), donations:v}), // reduce function,

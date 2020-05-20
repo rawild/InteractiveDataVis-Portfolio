@@ -103,15 +103,24 @@
 		</section>
 		<section id="methodology">
 			<div class="header-3">Methodology:</div> 
-				The donation data come from the New York State Board of Elections reports:
-                <a href="https://www.elections.ny.gov/CFViewReports.html" target="_blank">https://www.elections.ny.gov/CFViewReports.html</a>. The donations include those filed for candidates and their committees from January 2015 through the January 2020 
-                filing date. The candidates included are those politicians that currently represent the five boroughs in the state Senate and Assembly, plus the Majority Leader of the Senate, Andrea Stewart Cousins, and the four statewide posititions:
-                Governor, Lt. Governor, Comptroller, and Attorney General.   
-                
-                The donors were clustered accross different candidate's filings with the dedupe python library: <a href="https://github.com/dedupeio/dedupe">https://github.com/dedupeio/dedupe</a>. Additional
-                human review is on-going. The intention is to continue to improve the mapping and naming of the linked donors. There were some candidates that weren't included because they had no
-				filing committees that had recent filings clearly associated with their names. A review to include them is ongoing. If you would like to explore the underlying data in more detail
-				you can go to the <a href="https://bit.ly/WhoPaysNY">WhoPaysNY Interactive Tool</a>.
+				The donation data comes from the New York State Board of Elections reports:
+				<a href="https://www.elections.ny.gov/CFViewReports.html" target="_blank">https://www.elections.ny.gov/CFViewReports.html</a>. 
+				The donations include those filed for the current politicians and their committees from January 2015 through the January 2020 
+				filing date. The candidates included are those politicians that currently represent the five boroughs in the State Senate and Assembly, 
+				plus the majority leader of the senate, Andrea Stewart Cousins, and the four statewide positions:
+				governor, lieutenant governor, comptroller, and attorney general. The filing committees were compiled by searching for the policitians' 
+				names in the name of the committee. This is an imperfect search that is ongoing. There were some candidates that weren't included because they had no
+				filing committees that had recent filings clearly associated with their names. A review to include them is ongoing. 
+				<br><br>
+				Because of the lack of clarity about
+				committees that are associated with the politicians, as well as the conservative nuture of the clustering of donors together, these numbers can be considered
+				a "minimum."
+				<br><br>
+                The donors were clustered across different candidates' filings with the dedupe python library: <a href="https://github.com/dedupeio/dedupe">https://github.com/dedupeio/dedupe</a>. Additional
+				human review is ongoing.  There are still different clusters within the dataset that should be considered the same "donor," 
+				The intention is to continue to improve the mapping and naming of the linked donors.  
+				If you would like to explore the underlying data in more detail
+				you can go to the <a href="https://bit.ly/WhoPaysNY">WhoPaysNY Interactive Tool</a>. 
 		</section>
 	
 	</main>

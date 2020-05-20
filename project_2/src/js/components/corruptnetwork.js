@@ -32,7 +32,7 @@ export default class CorruptNetwork extends Component {
         /* Get the donor bar chart data*/ 
         self.element.append("div")
             .attr("class","header-2")
-            .text("Explore Cuomo's $894K from 90 Healthcare Organizations")
+            .text("Explore Cuomo's $894,000 from 90 Healthcare Corporations")
         self.element.append("div")
             .text("You can move the donors around if they get in the way.")
         
@@ -73,7 +73,7 @@ export default class CorruptNetwork extends Component {
                     innerTableContent =
                         "<tr>"+
                         "<th scope='row'> Andrew "+d.data.name+"</th><td> recieved $"+self.local.format(d.data.total)+
-                        "from all these donors</td>"+
+                        " from all these donors</td>"+
                         "</tr>"
 
                 }else{

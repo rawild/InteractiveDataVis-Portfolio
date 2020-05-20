@@ -128,17 +128,19 @@ export default class DonorScrolly extends Component {
             donorSide2.render('The N.Y.C. Campaign Finance Board: $2,232,391' , "New York City provides public financing to candidates.\
             The N.Y.C. Campaign Finance Board is the government agency that pays matching funds to qualifying candidates who run in city \
             elections. Why does money from city elections\
-            show up in donations to state politicians? Between 2015 and 2020, all of these politicians ran for public advocate. Any matching\
+            show up in donations to state politicians? Between 2015 and 2020, all of these politicians ran for New York City public advocate. Any matching\
             funds they had left over are transferrable to other races.","donor-side")
 
             let donorSide3 = new SidePanel('B3')
             donorSide3.render('The LAWPAC of NY: $1,275,160' , "What is the LAWPAC, and why do trial\
             lawyers spend so much money on candidates? The LAWPAC represents trial lawyers who earn their\
             living by helping people to sue for liability. In the last five years, there were many contested\
-            laws about who is liable for what. See Carlos' Law as an example. There are also bills before the\
+            laws about who is liable for what. See \
+            <a href='https://assembly.state.ny.us/leg/?default_fld=&bn=A04508&term=2019&Summary=Y&Actions=Y&Text=Y&Committee%26nbspVotes=Y&Floor%26nbspVotes=Y' target='_blank'>\
+            Carlos' Law</a> as an example. There are also bills before the\
             state legislature to limit the percentage that trial lawyers can get paid from a settlement.\
             <br><br>The LAWPAC casts a broad net donating 439 times total, including at least one donation to 79 of\
-            the 86 candidates. The average amount that they paid to a politician in the last 5 years was $2,905. \
+            the 86 candidates. The average amount that they paid to a politician in the last five years was $2,905. \
             The maximum that they paid to a single politician was $69,700. Note that while these donations represent\
             this organization, trial lawyer association members can also donate as individuals and via other PACs.\
             ","donor-side")
@@ -151,7 +153,7 @@ export default class DonorScrolly extends Component {
             won a gradual increase in the minimum wage in New York. They also were a big part of the Green Light NY Coalition that won access to driver's \
             licenses for undocumented people in New York in 2019.<br><br> Similar to the LAWPAC, 1199 SEIU casts a wide net, and\
             donated to 82 of the 86 candidates. The average amount that they paid to a politician in the last 5 years was $4,300,\
-            and they seem to spread their money around a little more than the LAWPAC, however. Still their donations are skewed\
+            and they seem to spread their money around a little more than the LAWPAC, however. Still, their donations are skewed\
             towards the top. The maximum amount they paid to a politician was $50,000. Unlike trial lawyers, most of the members\
             of 1199 SIEU are low paid. It seems unlikely that a significant\
             portion of them have the disposable income to throw around to donate as individuals.","donor-side")
