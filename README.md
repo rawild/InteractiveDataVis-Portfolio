@@ -20,6 +20,6 @@ It became clear working with the campaign finance data for the <a href="https://
 ### [View on github](https://github.com/rawild/InteractiveDataVis-Portfolio/tree/master/project_2)
 
 
-### [Reflection on Projects(./paper/Reflection.pdf)
+### [Reflection on Projects](./paper/Reflection.pdf)
 (This was for the DATA73200 class at the CUNY Graduate Center.) 
  
