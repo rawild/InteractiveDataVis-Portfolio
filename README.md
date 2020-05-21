@@ -1,7 +1,7 @@
 # Interactive Data Visualization Portfolio
 
 ## [Who Pays NY? Exploratory Tool](https://rawild.github.io/InteractiveDataVis-Portfolio/project_1/src/)
-<a href="https://rawild.github.io/InteractiveDataVis-Portfolio/project_1/src/" target="_blank" ><img style="max-height: 400px;"src="https://raw.githubusercontent.com/rawild/InteractiveDataVis-Portfolio/master/project_1/Sketches_Mockups/Final_ScreenShot.png" ></a>
+<a href="https://rawild.github.io/InteractiveDataVis-Portfolio/project_1/src/" target="_blank" ><img style="max-height: 400px;" src="https://raw.githubusercontent.com/rawild/InteractiveDataVis-Portfolio/master/project_1/Sketches_Mockups/Final_ScreenShot.png" ></a>
 ### A NY Campaign Finance Data Exploration Project
 The 2016 race totally transformed what what was considered possible via small dollar donations and a reliance on volunteer labor for outreach to voters. It inspired politicians like Alexandria Ocasio-Cortez and led to her ultimate victory. This tool seeks to help answer questions about who the traditional major players for political contribution are in New York state and to show how are they relating to this new class of politicians at the state-level? Additionally, this tool uncovers the donor overlap between specific politicians. The goal of the project is to help people who are interested in NY state politics better understand the "players" in Albany and help local journalists who are looking for breadcrumbs that might lead to stories. 
 ### [Long Abstract](./project_1/abstract.md)
