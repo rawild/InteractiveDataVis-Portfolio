@@ -66,9 +66,10 @@ function init() {
     $894,400 directly from the healthcare organizations this provision protects, and the medical liability insurance companies that would \
     pay for settlements. Those donations are shown below. \
     Note that this does not include any payments given by individuals who may own or occupy leadership positions in these corporations. An\
-    example of this is David C. Rich, who is an executive in the Greater NY Hospital Association and has given more often than any other individual, totaling more than $900,000\
+    extreme example of this is David C. Rich, who is an executive in the Greater NY Hospital Association and has given more often than any \
+    other individual, totaling more than $900,000\
     in the last five years. <a href='https://www.nytimes.com/2019/08/26/nyregion/new-york-lobbying.html' target='_blank'>\
-    Here is a story that The New York Times did about him last August.</a> ")
+    Here is a story that David Goodman at The New York Times did about him last August.</a> ")
     
     let corruptNetwork = new CorruptNetwork()
     corruptNetwork.render()
@@ -78,27 +79,26 @@ function init() {
     legislation is considered and passed. None of this is \"new news.\" Policies like raising the minimum wage, taxing the rich, and universal healthcare have broad support\
     within the electorate, yet never even come up for a vote. \
     <a href='https://scholar.princeton.edu/sites/default/files/mgilens/files/gilens_and_page_2014_-testing_theories_of_american_politics.doc.pdf' target='_blank'>\
-    A 2014 study</a> measured who influenced federal policy from 1989-2002. The different groups measured were average citizens, \
-    economic elites, mass-based interest groups (including everything from unions to the National Rifle Association) and business\
+    A 2014 study</a> measured who influenced federal policy from 1989 to 2002. The different groups measured were average citizens, \
+    economic elites, mass-based interest groups (including everything from unions to the National Rifle Association), and business\
     interest groups. It found that average citizens have \"essentially zero\" \
-    impact on policy changes at the national level.  Economic elites had by far the most influence, followed by business interest groups, which had 55% of the \
+    impact on policy changes at the national level. Economic elites had by far the most influence, followed by business interest groups, which had 55% of the \
     of influence of economic elites. Mass-based groups had about half of the influence of business groups and about 30% of the influence of economic elites.\
     <br><br>The interests of all citizens are not equally represented by our government. Wealthy people matter far more than the vast majority of us.\
     Because of this, the suffering of poorer and working class members of society is allowed to continue and grow.\
-    Our campaign finance system contributes to this inequality of representation.  Many other countries have \
+    Our campaign finance system contributes to this inequality of representation. Many other countries have \
     <a href='https://www.theatlantic.com/international/archive/2013/09/why-germany-s-politics-are-much-saner-cheaper-and-nicer-than-ours/280081/' target='_blank'>\
      different campaign finance systems</a> that cost their societies less\
     and allow for a broader plurality of interests to be represented in policy.\
-    To explore further exactly who has paid money to the New York state politicians you can check out the\
-     <a href='https://bit.ly/WhoPaysNY' target='_blank'>Who Pays NY? Interactive Tool</a> that allows you \
-    to compare who donates to which politicians.<br><br>\
-    <div class='header-2'>Can their be uncorrupted politicians in our corrupt system?</div>\
+    To explore further exactly who has paid money to New York state politicians you can check out the\
+     <a href='https://bit.ly/WhoPaysNY' target='_blank'>Who Pays NY? Interactive Tool</a>.<br><br>\
+    <div class='header-2'>Can there be uncorrupted politicians in our corrupt system?</div>\
     Bernie Sanders' campaign in 2016 was a testing ground for a new kind of politics, \
     one in which corporate donations were not accepted and the average contribution to the campaign was $27. \
     While some money is crucial to get a campaign going, the act of reaching voters can be done by volunteers or \
     other voters, not by expensive television ads or mailed flyers.\
     In 2018, Alexandria Ocasio-Cortez ran for Congress with this model and upset the deputy speaker of the House of Representatives.\
-    Julia Salazar ran for State Senate on this model, plus an expanded refusal to accept donations from real estate \
+    Julia Salazar ran for State Senate on this model, plus an expanded refusal to accept donations from real estate, \
     and beat the incumbant to represent District 18. In 2019, Tiffany Cabán ran for district attorney\
     in Queens with this model, and came within 55 votes of winning a campaign in which her opponent \
     <a href='https://thecity.nyc/2019/07/caban-beats-katz-in-latest-fundraising-and-legal-spending.html' target='_blank'>outspent her five\
@@ -108,13 +108,14 @@ function init() {
      The influence and organization of the wealthy requires that those of us who are not in the 1% organize together to fight for our interests.\
      The New York City chapter of the Democratic Socialists of America is an organization that the author organizes with. \
      It organizes working people to fight for policies that benefit\
-     regular people over the wealthy, has endorsed <a href='https://www.jacobinmag.com/2020/05/meet-new-yorks-socialist-insurgents' target='_blank'>\
-     six candidates</a>, members of the organization who running to represent New York in 2020. They are all refusing corporate donations and \
+     them over the wealthy, and has endorsed <a href='https://www.jacobinmag.com/2020/05/meet-new-yorks-socialist-insurgents' target='_blank'>\
+     six candidates</a>, who are members of the organization, to run to represent New York in 2020. They are all refusing corporate donations and \
      real estate money. In addition to Salazar, they include Samelys Lopez running to represent New York's 15th congressional district in the Bronx, \
-     Zohran Mamdani running for the Assembly representing Queens, Phara Souffrant Forrest and Marcela Mitanyes running for Assembly representing Brooklyn, and\
+     Zohran Mamdani running for the Assembly representing Queens, Phara Souffrant Forrest and Marcela Mitanyes running for Assembly districts in Brooklyn, and\
      Jabari Brisport running for State Senate representing Brooklyn. The pandemic seriously impacts the influence that volunteers can have in reaching their\
-     fellow voters\
-     so we will have to see what happens in the state primaries at the end of June.")
+     fellow voters,\
+     so we will have to see what happens in the state primaries at the end of June. But the entrance of these candidates into national, state, and local races\
+     has already made policies once called extreme and politically impossible mainstream.")
 }
 init()
 
