@@ -9,8 +9,8 @@ import BottomContent from "./components/bottomcontent.js"
 import CandidateBox from "./components/candidatebox.js"
 
 //Load the data
-Promise.all(["../data/summarized_filings_2015_20.csv",
-"../data/Electeds_List.csv", "../data/candidates_summarized_2015_20.csv"
+Promise.all(["../data/summarized_filings_2016_20.csv",
+"../data/Electeds_List.csv", "../data/candidates_summarized_2016_20.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
         //console.log("data", data);
@@ -29,9 +29,11 @@ Promise.all(["../data/summarized_filings_2015_20.csv",
 
 function init() {
     // Get global donor color spectrum
-    let donors = d3.nest().key(d => d.Cluster_ID).entries(store.state.data)
-    store.dispatch('setDonorsColor', d3.scaleSequential(d3.interpolateTurbo).domain([0, donors.length]))
-    console.log("hello?")
+    let donors_group = d3.group(store.state.data, d=>d.Cluster_ID)
+    let donors_array= [ ...donors_group.keys() ]
+    let min = d3.min(donors_array)
+    let max = d3.max(donors_array)
+    store.dispatch('setDonorsColor', d3.scaleSequential(d3.interpolateTurbo).domain([max, min]))
     // Instantiate components
     const barListInstance = new BarList();
     const selectionInstance = new Selection();

@@ -98,6 +98,9 @@ body {
  .green {
      color: #2baa4f;
  }
+ .blue {
+     color:rgb(57, 108, 250);
+ }
  .yellow {
      color: #ebca0f;
  }

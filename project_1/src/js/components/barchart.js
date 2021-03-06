@@ -43,7 +43,6 @@ export default class BarChart extends Component {
     
     
         let nested = d3.nest().key(d => d.Candidate_ID).entries(filteredData)
-       // console.log("nested", nested)
 
         let yScale = d3
             .scaleBand()
@@ -56,34 +55,33 @@ export default class BarChart extends Component {
 
         //yScale.domain([0,d3.max(filteredData.map(d => d.Total))])
         //const barColors = d3.scaleSequential(d3.interpolateTurbo).domain([0, nested[0].values.length])
-        var keys = d3.range(0, nested[0].values.length)
+        var keys = d3.range(0, nested[0].values.length).reverse()
         let stackedData = d3.stack().keys(keys).value((d, key) => d.values[key].Total)(nested)
         // Build the bar with the stacked data
         const bars = bar
         .selectAll("rect")
         .data(stackedData)
         .join("rect")
-        .attr("fill", (d) => store.state.donorsColor(d[0].data.values[d.index].Cluster_ID))
+        .attr("fill", (d) => store.state.donorsColor(d[0].data.values[d.key].Cluster_ID))
         .attr("class", d => {
-            return "donor" + d[0].data.values[d.index].Cluster_ID 
+            return "donor" + d[0].data.values[d.key].Cluster_ID 
         })
-        .attr("donor", (d) => {return d[0].data.values[d.index].Donor})
-        .attr("ave", (d) => {return parseInt(d[0].data.values[d.index].Contribution_Avg)})
-        .attr("total", (d) => { return d[0].data.values[d.index].Total})
-        .attr("count", (d) => { return d[0].data.values[d.index].Count})
+        .attr("donor", (d) => {return d[0].data.values[d.key].Donor})
+        .attr("ave", (d) => {return parseInt(d[0].data.values[d.key].Contribution_Avg)})
+        .attr("total", (d) => { return d[0].data.values[d.key].Total})
+        .attr("count", (d) => { return d[0].data.values[d.key].Count})
         .on("click", d => {  // add the click functionality
-            let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
+            let id = "donor"+ d[0].data.values[d.key].Cluster_ID 
             let donors = []
             d3.selectAll("."+id).each((d) => {
                 let donor = {}
-                donor["donor"] = d[0].data.values[d.index].Donor
-                donor["ave"] = parseInt(d[0].data.values[d.index].Contribution_Avg)
-                donor["total"] = d[0].data.values[d.index].Total
-                donor["count"] = d[0].data.values[d.index].Count
+                donor["donor"] = d[0].data.values[d.key].Donor
+                donor["ave"] = parseInt(d[0].data.values[d.key].Contribution_Avg)
+                donor["total"] = d[0].data.values[d.key].Total
+                donor["count"] = d[0].data.values[d.key].Count
                 donor["candidate"] = d[0].data.key                
                 donors.push(donor)
             })
-            //console.log('donors',donors)
             store.dispatch('updateDonors', donors)
             })
         .attr("x", d => xScale(d[0][0]))
@@ -91,8 +89,7 @@ export default class BarChart extends Component {
         .attr("height", () => yScale.bandwidth())
         .attr("width", d => xScale(d[0][1]) - xScale(d[0][0]))
         .on("mouseover", d => {
-            let id = "donor"+ d[0].data.values[d.index].Cluster_ID 
-            //console.log(id)
+            let id = "donor"+ d[0].data.values[d.key].Cluster_ID 
             d3.selectAll("."+id)
                 .classed("barHighlighted", true)                
         })
@@ -101,11 +98,8 @@ export default class BarChart extends Component {
                 .classed("barHighlighted", false)    
         })
 
-
         //Add the yAxis
         const yAxis = d3.axisLeft(yScale).tickSize(0).tickPadding(10);
-        
-
         bar
             .append("g")
             .attr("class", "axis")
