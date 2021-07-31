@@ -61,7 +61,7 @@ export default class BarList extends Component {
                     d3.select("#candidate-box")
                     .append("div")
                     .attr("class", "side-warning")
-                    .text('Click on a politician\'s name to see thier stats.')
+                    .text('Click on a politician\'s name to see their stats.')
             }
             let filteredData=store.state.data.filter(d => store.state.selectedPoliticians.includes(d.Candidate_ID))
             const rollUp = d3.rollups(
