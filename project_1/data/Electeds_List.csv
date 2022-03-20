@@ -1,97 +1,97 @@
 Elected_Id,District,Name,Party,County,Role,First_Elected,SpecialPosition,Filer_IDs,First_Name,Last_Name
-1,10,James Sanders Jr.,Democratic,Queens,Senate,2012,,"C25306,C55855,C55815,C25305,A87136,A56855,A56639,C55455,A87135",James,Sanders Jr.
-2,11,John Liu,Democratic,Queens,Senate,2018,,"C83956,C21219,C21218,C20293,C20291,A19945,A19944",John,Liu
-3,12,Michael Gianaris,Democratic,Queens,Senate,2010,Deputy Majority Leader,"A11898,A11899,A17842,A21840,",Michael,Gianaris
-4,13,Jessica Ramos,Democratic,Queens,Senate,2018,,"C02964,C02963,A22072,A22071",Jessica,Ramos
-5,14,Leroy Comrie,Democratic,Queens,Senate,2014,Deputy Majority Leader for State/Federal Relation,"C32410,C32409,C21084,C21080,C21074,C21073,A75615,A30642,A30641,A19996",Leroy,Comrie
-6,15,Joseph Addabbo Jr.,Democratic,Queens,Senate,2008,,"C40077,C40076,C40075,A34079,A34078",Joseph,Addabbo Jr.
-7,16,Toby Ann Stavisky,Democratic,Queens,Senate,1999,,"C25633,A11578,A11577",Toby,Ann Stavisky
-8,17,Simcha Felder,Democratic[c],Kings,Senate,2012,,"C24125,A38445,C24124,A87240,C43376",Simcha,Felder
-9,18,Julia Salazar,Democratic,Kings,Senate,2018,,"A22307,A22306",Julia,Salazar
-10,19,Roxanne Persaud,Democratic,Kings,Senate,2015,,"A21661,A21165,A19680,A19678,A21164",Roxanne,Persaud
-11,20,Zellnor Myrie,Democratic,Kings,Senate,2018,,"A22016,A22015",Zellnor,Myrie
-12,21,Kevin Parker,Democratic,Kings,Senate,2002,Majority Whip,"C10219,C10218,A18984,A18975,A13551,A13550",Kevin,Parker
-13,22,Andrew Gounardes,Democratic,Kings,Senate,2018,,"A86519,A86518,A21979,A21978",Andrew,Gounardes
-14,23,Diane Savino,Democratic,"Kings, Richmond",Senate,2004,,"A22091,A19053,A18417,A18416",Diane,Savino
-15,24,Andrew Lanza,Republican,Richmond,Senate,2006,,"C20913,C20910,A24149,A24148",Andrew,Lanza
-16,25,Jabari Brisport,Democratic,Kings,Senate,2020,,"C06890,C06834,C06833,A23113,A23112",Jabari,Brisport
-17,26,Brian P. Kavanagh,Democratic,"Kings, New York",Senate,2017,,"C22773,C22772,A22927,A22926,A21937,A21936",Brian,P. Kavanagh
-18,27,Brad Hoylman,Democratic,New York,Senate,2012,,"C87167,C38896,C38895,A87356,A87355",Brad,Hoylman
-19,28,Liz Krueger,Democratic,New York,Senate,2002,Chair of the Senate Finance Committee,"A19968,A11871,A11870",Liz,Krueger
-20,29,José M. Serrano,Democratic,New York,Senate,2004,,"A18402,A18401",José ,M. Serrano
-21,30,Cordell Cleare,Democratic,New York,Senate,2021,,"",Cordell,Cleare
-22,31,Robert Jackson,Democratic,New York,Senate,2018,,"C31826,C31825,C29161,C29141,C04864,C04863,A19866,A19865,A21204,A22895,A21884",Robert,Jackson
-23,32,Luis R. Sepúlveda,Democratic,Bronx,Senate,2018,,"A21902,A21901,A78035",Luis,R. Sepúlveda
-24,33,Gustavo Rivera,Democratic,Bronx,Senate,2010,,"A80136,A80135",Gustavo,Rivera
-25,34,Alessandra Biaggi,Democratic,"Bronx, Westchester",Senate,2018,,"A22092,A22086",Alessandra,Biaggi
-26,35,Andrea Stewart-Cousins,Democratic,Westchester,Senate,2006,Majority Leader of the Senate,"C28364,C28363,A18432,A18431",Andrea,Stewart-Cousins
-27,36,Jamaal Bailey,Democratic,"Bronx, Westchester",Senate,2016,,"A21095,A21094",Jamaal,Bailey
-28,23,Stacey Pheffer Amato,Dem,Queens,Assembly,2016,,"A21529,A21527",Stacey,Pheffer Amato
-29,24,David Weprin,Dem,Queens,Assembly,2010,,"A71900,A71899,C11336,C11335,C20256,C20255,C25544,C25542",David,Weprin
-30,25,Nily Rozic,Dem,Queens,Assembly,2012,,"A87173,A87172",Nily,Rozic
-31,26,Edward Braunstein,Dem,Queens,Assembly,2010,,"C78255,A78295,A78275",Edward,Braunstein
-32,27,Daniel Rosenthal,Dem,Queens,Assembly,2017,,"A21977,A21976",Daniel,Rosenthal
-33,28,Andrew Hevesi,Dem,Queens,Assembly,2005,,"A18934,A18933,A17791",Andrew,Hevesi
-34,29,Alicia Hyndman,Dem,Queens,Assembly,2015,,"C12436,C12435,A21715,A21119,A21118",Alicia,Hyndman
-35,30,Brian Barnwell,Dem,Queens,Assembly,2016,,"A21134,A21133",Brian,Barnwell
-36,31,Khaleel Anderson,Dem,Queens,Assembly,2020,,"A22915,A22914",Khaleel,Anderson
-37,32,Vivian E. Cook,Dem,Queens,Assembly,1990,,"A06080,A03886,A01785,A01719",Vivian,E. Cook
-38,33,Clyde Vanel,Dem,Queens,Assembly,2016,,"C42355,C42335,C00673,C00672,A76755,A76735,A21502,A19684,A19683",Clyde,Vanel
-39,34,Jessica González-Rojas,Dem,Queens,Assembly,2020,,"A22994,A22993,C22302,C22301,A13849,A13848",Jessica,González-Rojas
-40,35,Jeffrion L. Aubry,Dem,Queens,Assembly,1992,,"A06083,A02881",Jeffrion,L. Aubry
-41,36,Zohran Mamdani,Dem,Queens,Assembly,2020,,"A23132,A23131",Zohran,Mamdani
-42,37,Catherine Nolan,Dem,Queens,Assembly,1984,,"A21836,A21062,A12514,A06084,A02092",Catherine,Nolan
-43,38,Jenifer Rajkumar,Dem,Queens,Assembly,2020,,"C88271,C84815,C84814,C04809,A23168,A21570,A19669,A19668",Jenifer,Rajkumar
-44,39,Catalina Cruz,Dem,Queens,Assembly,2018,,"A22921,A21988,A21987",Catalina,Cruz
-45,40,Ron Kim,Dem,Queens,Assembly,2012,,"C24749,C24748,C10308,C10307,C06478,C06477,A87376,A87375,A21070,A20943",Ron,Kim
-46,41,Helene Weinstein,Dem,Kings,Assembly,1980,,",A26447,A06283,A05267,A04098,A02462,A02099,A01313",Helene,Weinstein
-47,42,Rodneyse Bichotte,Dem,Kings,Assembly,2014,,"C79215,C79195,A86841,A86840",Rodneyse,Bichotte
-48,43,Diana Richardson,Dem[20],Kings,Assembly,2015,,"C03062,C03061,A21576,A21067,A21066",Diana,Richardson
-49,44,Robert Carroll,Dem,Kings,Assembly,2016,,"A21493,A21492,C03545,C03544",Robert,Carroll
-50,45,Steven Cymbrowitz,Dem,Kings,Assembly,2000,,"A12359,A12358",Steven,Cymbrowitz
-51,46,Mathylde Frontus,Dem,Kings,Assembly,2018,,"A22023,A22022",Mathylde,Frontus
-52,47,William Colton,Dem,Kings,Assembly,1996,,"A05929,A05928",William,Colton
-53,48,Simcha Eichenstein,Dem,Kings,Assembly,2018,,"A22369,A22368",Simcha,Eichenstein
-54,49,Peter J. Abbate Jr.,Dem,Kings,Assembly,1986,,"A06345,A06098,A04885,A03218,A02116,A01237",Peter,J. Abbate Jr.
-55,50,Emily Gallagher,Dem,Kings,Assembly,2020,,"C12154,C06030,A23053,A23052",Emily,Gallagher
-56,51,Marcela Mitaynes,Dem,Kings,Assembly,2020,,"A23067,A23066",Marcela,Mitaynes
-57,52,Jo Anne Simon,Dem,Kings,Assembly,2014,,"C25322,C19857,C19851,C19849,A19929,A19928",Jo Anne,Simon
-58,53,Maritza Davila,Dem,Kings,Assembly,2013,,"C82878,C42636,C42635,A19533,A19532",Maritza,Davila
-59,54,Erik Martin Dilan,Dem,Kings,Assembly,2014,,"C45935,C20915,C20912,A25049,A19985,A19984",Erik,Martin Dilan
-60,55,Latrice Walker,Dem,Kings,Assembly,2014,,"C83050,C83049,C10289,A21237,A21236,A19921",Latrice,Walker
-61,56,Stefani Zinerman,Dem,Kings,Assembly,2020,,"A23387,A23386",Stefani,Zinerman
-62,57,Phara Souffrant Forrest,Dem,Kings,Assembly,2020,,"A23145,A23144",Phara,Souffrant Forrest
-63,58,N. Nick Perry,Dem,Kings,Assembly,1992,,"A26465,A03727,A03388,A05826",N. Nick ,Perry
-64,59,Jaime Williams,Dem,Kings,Assembly,2016,,"A21348,A21327",Jaime,Williams
-65,60,Nikki Lucas,Dem,Kings,Assembly,2022,,"",Nikki,Lucas
-66,61,Charles Fall,Dem,Richmond,Assembly,2018,,"A22344,A22343",Charles,Fall
-67,62,Michael Reilly,Rep,Richmond,Assembly,2018,,"A22314,A22313",Michael,Reilly
-68,63,Michael Cusick,Dem,Richmond,Assembly,2002,,"A13405,A13404",Michael,Cusick
-69,64,Michael Tannousis,Rep,"Kings, Richmond",Assembly,2020,,"A23002,A23001",Michael,Tannousis
-70,65,Yuh-Line Niou,Dem,New York,Assembly,2016,,"A21219,A21218",Yuh-Line,Niou
-71,66,Deborah J. Glick,Dem,New York,Assembly,1990,,"A06118,A03742,A02142,A01225",Deborah,J. Glick
-72,67,Linda Rosenthal,Dem,New York,Assembly,2006,,"A36735,A19200,A19199",Linda,Rosenthal
-73,68,Eddie Gibs,Dem,New York,Assembly,2022,,"",Eddie,Gibs
-74,69,Daniel J. O'Donnell,Dem,New York,Assembly,2002,,"C10259,A07222,A07108",Daniel,J. O'Donnell
-75,70,Inez Dickens,Dem,New York,Assembly,2016,,"C33233,C21266,C21264,A21592,A20083,C87552,C84169,C33232,A20082",Inez,Dickens
-76,71,Al Taylor,Dem,New York,Assembly,2017,,"A21896,C84487,C84486,A21895",Al,Taylor
-77,72,Manny De Los Santos,Dem,New York,Assembly,2022,,"",Manny,De Los Santos
-78,73,Dan Quart,Dem,New York,Assembly,2011,,"C37002,C37001,C20565,C20564,C10336,C09613,C05994,A85885,A85884,A85455",Dan,Quart
-79,74,Harvey Epstein,Dem,New York,Assembly,2018,,"A21948,A21947",Harvey,Epstein
-80,75,Richard N. Gottfried,Dem,New York,Assembly,1970,,"A02622,A00281",Richard,N. Gottfried
-81,76,Rebecca Seawright,Dem,New York,Assembly,2014,,"A19763,A19762",Rebecca,Seawright
-82,77,Latoya Joyner,Dem,Bronx,Assembly,2014,,"A21097,A19723,A19722",Latoya,Joyner
-83,78,Jose Rivera,Dem,Bronx,Assembly,2000,,"A13338,A11993,A11992",Jose,Rivera
-84,79,Chantel Jackson,Dem,Bronx,Assembly,2020,,"A23042,A23041",Chantel,Jackson
-85,80,Nathalia Fernandez,Dem,Bronx,Assembly,2018,,"A22172,A22171",Nathalia,Fernandez
-86,81,Jeffrey Dinowitz,Dem,Bronx,Assembly,1994,,"A04365,A04364",Jeffrey,Dinowitz
-87,82,Michael Benedetto,Dem,Bronx,Assembly,2004,,"A83863,A70155,A18481,A11964,A11963",Michael,Benedetto
-88,83,Carl Heastie,Dem,Bronx,Assembly,2000,Speaker of the Assembly,"A22130,A12194,A11761,A11760",Carl,Heastie
+148,10,James Sanders Jr.,Democratic,Queens,Senate,2012,,"C25306,C55855,C55815,C25305,A87136,A56855,A56639,C55455,A87135",James,Sanders Jr.
+2128,11,John Liu,Democratic,Queens,Senate,2018,,"C83956,C21219,C21218,C20293,C20291,A19945,A19944",John,Liu
+117,12,Michael Gianaris,Democratic,Queens,Senate,2010,Deputy Majority Leader,"A11898,A11899,A17842,A21840,",Michael,Gianaris
+135,13,Jessica Ramos,Democratic,Queens,Senate,2018,,"C02964,C02963,A22072,A22071",Jessica,Ramos
+114,14,Leroy Comrie,Democratic,Queens,Senate,2014,Deputy Majority Leader for State/Federal Relation,"C32410,C32409,C21084,C21080,C21074,C21073,A75615,A30642,A30641,A19996",Leroy,Comrie
+107,15,Joseph Addabbo Jr.,Democratic,Queens,Senate,2008,,"C40077,C40076,C40075,A34079,A34078",Joseph,Addabbo Jr.
+144,16,Toby Ann Stavisky,Democratic,Queens,Senate,1999,,"C25633,A11578,A11577",Toby,Ann Stavisky
+149,17,Simcha Felder,Democratic[c],Kings,Senate,2012,,"C24125,A38445,C24124,A87240,C43376",Simcha,Felder
+139,18,Julia Salazar,Democratic,Kings,Senate,2018,,"A22307,A22306",Julia,Salazar
+134,19,Roxanne Persaud,Democratic,Kings,Senate,2015,,"A21661,A21165,A19680,A19678,A21164",Roxanne,Persaud
+132,20,Zellnor Myrie,Democratic,Kings,Senate,2018,,"A22016,A22015",Zellnor,Myrie
+133,21,Kevin Parker,Democratic,Kings,Senate,2002,Majority Whip,"C10219,C10218,A18984,A18975,A13551,A13550",Kevin,Parker
+118,22,Andrew Gounardes,Democratic,Kings,Senate,2018,,"A86519,A86518,A21979,A21978",Andrew,Gounardes
+140,23,Diane Savino,Democratic,"Kings, Richmond",Senate,2004,,"A22091,A19053,A18417,A18416",Diane,Savino
+150,24,Andrew Lanza,Republican,Richmond,Senate,2006,,"C20913,C20910,A24149,A24148",Andrew,Lanza
+111,25,Jabari Brisport,Democratic,Kings,Senate,2020,,"C06890,C06834,C06833,A23113,A23112",Jabari,Brisport
+125,26,Brian P. Kavanagh,Democratic,"Kings, New York",Senate,2017,,"C22773,C22772,A22927,A22926,A21937,A21936",Brian,P. Kavanagh
+121,27,Brad Hoylman,Democratic,New York,Senate,2012,,"C87167,C38896,C38895,A87356,A87355",Brad,Hoylman
+127,28,Liz Krueger,Democratic,New York,Senate,2002,Chair of the Senate Finance Committee,"A19968,A11871,A11870",Liz,Krueger
+142,29,José M. Serrano,Democratic,New York,Senate,2004,,"A18402,A18401",José ,M. Serrano
+158,30,Cordell Cleare,Democratic,New York,Senate,2021,,"",Cordell,Cleare
+122,31,Robert Jackson,Democratic,New York,Senate,2018,,"C31826,C31825,C29161,C29141,C04864,C04863,A19866,A19865,A21204,A22895,A21884",Robert,Jackson
+141,32,Luis R. Sepúlveda,Democratic,Bronx,Senate,2018,,"A21902,A21901,A78035",Luis,R. Sepúlveda
+137,33,Gustavo Rivera,Democratic,Bronx,Senate,2010,,"A80136,A80135",Gustavo,Rivera
+109,34,Alessandra Biaggi,Democratic,"Bronx, Westchester",Senate,2018,,"A22092,A22086",Alessandra,Biaggi
+145,35,Andrea Stewart-Cousins,Democratic,Westchester,Senate,2006,Majority Leader of the Senate,"C28364,C28363,A18432,A18431",Andrea,Stewart-Cousins
+108,36,Jamaal Bailey,Democratic,"Bronx, Westchester",Senate,2016,,"A21095,A21094",Jamaal,Bailey
+73,23,Stacey Pheffer Amato,Dem,Queens,Assembly,2016,,"A21529,A21527",Stacey,Pheffer Amato
+101,24,David Weprin,Dem,Queens,Assembly,2010,,"A71900,A71899,C11336,C11335,C20256,C20255,C25544,C25542",David,Weprin
+86,25,Nily Rozic,Dem,Queens,Assembly,2012,,"A87173,A87172",Nily,Rozic
+10,26,Edward Braunstein,Dem,Queens,Assembly,2010,,"C78255,A78295,A78275",Edward,Braunstein
+84,27,Daniel Rosenthal,Dem,Queens,Assembly,2017,,"A21977,A21976",Daniel,Rosenthal
+47,28,Andrew Hevesi,Dem,Queens,Assembly,2005,,"A18934,A18933,A17791",Andrew,Hevesi
+49,29,Alicia Hyndman,Dem,Queens,Assembly,2015,,"C12436,C12435,A21715,A21119,A21118",Alicia,Hyndman
+5,30,Brian Barnwell,Dem,Queens,Assembly,2016,,"A21134,A21133",Brian,Barnwell
+3,31,Khaleel Anderson,Dem,Queens,Assembly,2020,,"A22915,A22914",Khaleel,Anderson
+21,32,Vivian E. Cook,Dem,Queens,Assembly,1990,,"A06080,A03886,A01785,A01719",Vivian,E. Cook
+98,33,Clyde Vanel,Dem,Queens,Assembly,2016,,"C42355,C42335,C00673,C00672,A76755,A76735,A21502,A19684,A19683",Clyde,Vanel
+42,34,Jessica González-Rojas,Dem,Queens,Assembly,2020,,"A22994,A22993,C22302,C22301,A13849,A13848",Jessica,González-Rojas
+4,35,Jeffrion L. Aubry,Dem,Queens,Assembly,1992,,"A06083,A02881",Jeffrion,L. Aubry
+61,36,Zohran Mamdani,Dem,Queens,Assembly,2020,,"A23132,A23131",Zohran,Mamdani
+67,37,Catherine Nolan,Dem,Queens,Assembly,1984,,"A21836,A21062,A12514,A06084,A02092",Catherine,Nolan
+77,38,Jenifer Rajkumar,Dem,Queens,Assembly,2020,,"C88271,C84815,C84814,C04809,A23168,A21570,A19669,A19668",Jenifer,Rajkumar
+22,39,Catalina Cruz,Dem,Queens,Assembly,2018,,"A22921,A21988,A21987",Catalina,Cruz
+56,40,Ron Kim,Dem,Queens,Assembly,2012,,"C24749,C24748,C10308,C10307,C06478,C06477,A87376,A87375,A21070,A20943",Ron,Kim
+100,41,Helene Weinstein,Dem,Kings,Assembly,1980,,",A26447,A06283,A05267,A04098,A02462,A02099,A01313",Helene,Weinstein
+9,42,Rodneyse Bichotte,Dem,Kings,Assembly,2014,,"C79215,C79195,A86841,A86840",Rodneyse,Bichotte
+80,43,Diana Richardson,Dem[20],Kings,Assembly,2015,,"C03062,C03061,A21576,A21067,A21066",Diana,Richardson
+17,44,Robert Carroll,Dem,Kings,Assembly,2016,,"A21493,A21492,C03545,C03544",Robert,Carroll
+24,45,Steven Cymbrowitz,Dem,Kings,Assembly,2000,,"A12359,A12358",Steven,Cymbrowitz
+38,46,Mathylde Frontus,Dem,Kings,Assembly,2018,,"A22023,A22022",Mathylde,Frontus
+19,47,William Colton,Dem,Kings,Assembly,1996,,"A05929,A05928",William,Colton
+31,48,Simcha Eichenstein,Dem,Kings,Assembly,2018,,"A22369,A22368",Simcha,Eichenstein
+1,49,Peter J. Abbate Jr.,Dem,Kings,Assembly,1986,,"A06345,A06098,A04885,A03218,A02116,A01237",Peter,J. Abbate Jr.
+40,50,Emily Gallagher,Dem,Kings,Assembly,2020,,"C12154,C06030,A23053,A23052",Emily,Gallagher
+65,51,Marcela Mitaynes,Dem,Kings,Assembly,2020,,"A23067,A23066",Marcela,Mitaynes
+91,52,Jo Anne Simon,Dem,Kings,Assembly,2014,,"C25322,C19857,C19851,C19849,A19929,A19928",Jo Anne,Simon
+26,53,Maritza Davila,Dem,Kings,Assembly,2013,,"C82878,C42636,C42635,A19533,A19532",Maritza,Davila
+29,54,Erik Martin Dilan,Dem,Kings,Assembly,2014,,"C45935,C20915,C20912,A25049,A19985,A19984",Erik,Martin Dilan
+99,55,Latrice Walker,Dem,Kings,Assembly,2014,,"C83050,C83049,C10289,A21237,A21236,A19921",Latrice,Walker
+105,56,Stefani Zinerman,Dem,Kings,Assembly,2020,,"A23387,A23386",Stefani,Zinerman
+37,57,Phara Souffrant Forrest,Dem,Kings,Assembly,2020,,"A23145,A23144",Phara,Souffrant Forrest
+72,58,N. Nick Perry,Dem,Kings,Assembly,1992,,"A26465,A03727,A03388,A05826",N. Nick ,Perry
+102,59,Jaime Williams,Dem,Kings,Assembly,2016,,"A21348,A21327",Jaime,Williams
+154,60,Nikki Lucas,Dem,Kings,Assembly,2022,,"",Nikki,Lucas
+35,61,Charles Fall,Dem,Richmond,Assembly,2018,,"A22344,A22343",Charles,Fall
+151,62,Michael Reilly,Rep,Richmond,Assembly,2018,,"A22314,A22313",Michael,Reilly
+23,63,Michael Cusick,Dem,Richmond,Assembly,2002,,"A13405,A13404",Michael,Cusick
+52,64,Michael Tannousis,Rep,"Kings, Richmond",Assembly,2020,,"A23002,A23001",Michael,Tannousis
+66,65,Yuh-Line Niou,Dem,New York,Assembly,2016,,"A21219,A21218",Yuh-Line,Niou
+41,66,Deborah J. Glick,Dem,New York,Assembly,1990,,"A06118,A03742,A02142,A01225",Deborah,J. Glick
+85,67,Linda Rosenthal,Dem,New York,Assembly,2006,,"A36735,A19200,A19199",Linda,Rosenthal
+155,68,Eddie Gibs,Dem,New York,Assembly,2022,,"",Eddie,Gibs
+68,69,Daniel J. O'Donnell,Dem,New York,Assembly,2002,,"C10259,A07222,A07108",Daniel,J. O'Donnell
+28,70,Inez Dickens,Dem,New York,Assembly,2016,,"C33233,C21266,C21264,A21592,A20083,C87552,C84169,C33232,A20082",Inez,Dickens
+96,71,Al Taylor,Dem,New York,Assembly,2017,,"A21896,C84487,C84486,A21895",Al,Taylor
+156,72,Manny De Los Santos,Dem,New York,Assembly,2022,,"",Manny,De Los Santos
+76,73,Dan Quart,Dem,New York,Assembly,2011,,"C37002,C37001,C20565,C20564,C10336,C09613,C05994,A85885,A85884,A85455",Dan,Quart
+33,74,Harvey Epstein,Dem,New York,Assembly,2018,,"A21948,A21947",Harvey,Epstein
+43,75,Richard N. Gottfried,Dem,New York,Assembly,1970,,"A02622,A00281",Richard,N. Gottfried
+153,76,Rebecca Seawright,Dem,New York,Assembly,2014,,"A19763,A19762",Rebecca,Seawright
+54,77,Latoya Joyner,Dem,Bronx,Assembly,2014,,"A21097,A19723,A19722",Latoya,Joyner
+81,78,Jose Rivera,Dem,Bronx,Assembly,2000,,"A13338,A11993,A11992",Jose,Rivera
+50,79,Chantel Jackson,Dem,Bronx,Assembly,2020,,"A23042,A23041",Chantel,Jackson
+36,80,Nathalia Fernandez,Dem,Bronx,Assembly,2018,,"A22172,A22171",Nathalia,Fernandez
+30,81,Jeffrey Dinowitz,Dem,Bronx,Assembly,1994,,"A04365,A04364",Jeffrey,Dinowitz
+8,82,Michael Benedetto,Dem,Bronx,Assembly,2004,,"A83863,A70155,A18481,A11964,A11963",Michael,Benedetto
+46,83,Carl Heastie,Dem,Bronx,Assembly,2000,Speaker of the Assembly,"A22130,A12194,A11761,A11760",Carl,Heastie
 89,84,Amanda Septimo,Dem,Bronx,Assembly,2020,,"C05836,C05835,A21488,A21487",Amanda,Septimo
-90,85,Kenny Burgos,Dem,Bronx,Assembly,2020,,"A23547,A23546",Kenny,Burgos
-91,86,Yudelka Tapia,Dem,Bronx,Assembly,2021,,"",Yudelka,Tapia
-92,87,Karines Reyes,Dem,Bronx,Assembly,2018,,"A22225,A22224",Karines,Reyes
-93,Statewide,Kathy,Dem,Statewide,Governor,2021,,"",Kathy,Hochul
-94,Statewide,Brian ,Dem,Statewide,Lieutenant Governor,2021,,"",Brian,Benjamin
-95,Statewide,Letitia,Dem,Statewide,Attorney General,2019,,"C85620,C85619,C40223,C40222,C34400,C34399,C34398,C19601,C19600,C09424,C09423,C02734,A22406",Letitia,James
-96,Statewide,Thomas,Dem,Statewide,Comptroller,2007,,"C32574,C32573,A36301,A31661,A26780,A18397,A02049,A00837",Thomas,DiNapoli
+13,85,Kenny Burgos,Dem,Bronx,Assembly,2020,,"A23547,A23546",Kenny,Burgos
+157,86,Yudelka Tapia,Dem,Bronx,Assembly,2021,,"",Yudelka,Tapia
+79,87,Karines Reyes,Dem,Bronx,Assembly,2018,,"A22225,A22224",Karines,Reyes
+159,Statewide,Kathy,Dem,Statewide,Governor,2021,,"",Kathy,Hochul
+160,Statewide,Brian ,Dem,Statewide,Lieutenant Governor,2021,,"",Brian,Benjamin
+161,Statewide,Letitia,Dem,Statewide,Attorney General,2019,,"C85620,C85619,C40223,C40222,C34400,C34399,C34398,C19601,C19600,C09424,C09423,C02734,A22406",Letitia,James
+162,Statewide,Thomas,Dem,Statewide,Comptroller,2007,,"C32574,C32573,A36301,A31661,A26780,A18397,A02049,A00837",Thomas,DiNapoli
