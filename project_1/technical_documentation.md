@@ -3,7 +3,7 @@
 ## Summary
 The donation data comes from the New York State Board of Elections reports:
 <a href="https://www.elections.ny.gov/CFViewReports.html" target="_blank">https://www.elections.ny.gov/CFViewReports.html</a>. 
-The donations include those filed for the current politicians and their committees from January 2015 through the January 2020 
+The donations include those filed for the current politicians and their committees from January 2017 through the January 2022 
 filing date. The candidates included are those politicians that currently represent the five boroughs in the State Senate and Assembly, 
 plus the majority leader of the senate, Andrea Stewart Cousins, and the four statewide positions:
 governor, lieutenant governor, comptroller, and attorney general. The filing committees were compiled by searching for the policitians' 
@@ -24,7 +24,7 @@ The initial politician list included 96 politicians. This included the 91 2020 s
 
 ## The Committee "Filers"
 The list of all "Filer" committees that have ever filed with the NY State board of elections is available on <a href="https://www.elections.ny.gov/CFViewReports.html" target="_blank">their website as the "Filer data file"</a>. I wrote a python script to find the filers that had either the first or last name of any of the politicians in the list above. After getting a list of all the possible filers, I manually compared the list of identified filers with results returned by the Board of Elections *Search our Database by
-Candidate Name or Committe Name* page to ensure that for common names the filers were correct. At the end of this step, I had a list of 476 filers associated with the 96 politicians. These committees have names like "Andrew Lanza for Staten Island," "Friends of Andrew J. Lanza", or just "Andrew J. Lanza."
+Candidate Name or Committe Name* page to ensure that for common names the filers were correct. At the end of this step, I had a list of 408 filers associated with the 96 politicians. These committees have names like "Andrew Lanza for Staten Island," "Friends of Andrew J. Lanza", or just "Andrew J. Lanza."
 
 ## The Filings for The Committees
 The data file for all of the filings ever made is available on the Board of Elections website called "Data file containing ALL filings." This is an "ascii delimited" file, but there are also code book files you can use to parse the data and find the column widths. Once that is done, the data contains a row for each donation ever filed with the board of elections. It is surprisingly lightweight, less than 1 GB. I wrote a python script to search this file for all the filings associated with the IDs of the "Filers" identified in the step above. At this point there were 10 politicians that had no filings associated with their "filers". For the sake of moving forward, I dropped those politicians from the group.

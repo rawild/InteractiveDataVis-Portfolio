@@ -19,7 +19,7 @@ Elected_Id,District,Name,Party,County,Role,First_Elected,SpecialPosition,Filer_I
 18,27,Brad Hoylman,Democratic,New York,Senate,2012,,"C87167,C38896,C38895,A87356,A87355",Brad,Hoylman
 19,28,Liz Krueger,Democratic,New York,Senate,2002,Chair of the Senate Finance Committee,"A19968,A11871,A11870",Liz,Krueger
 20,29,José M. Serrano,Democratic,New York,Senate,2004,,"A18402,A18401",José ,M. Serrano
-21,30,Brian Benjamin,Democratic,New York,Senate,2017,,"C83594,A21233,A21232,C83593",Brian,Benjamin
+21,30,Cordell Cleare,Democratic,New York,Senate,2021,,"",Cordell,Cleare
 22,31,Robert Jackson,Democratic,New York,Senate,2018,,"C31826,C31825,C29161,C29141,C04864,C04863,A19866,A19865,A21204,A22895,A21884",Robert,Jackson
 23,32,Luis R. Sepúlveda,Democratic,Bronx,Senate,2018,,"A21902,A21901,A78035",Luis,R. Sepúlveda
 24,33,Gustavo Rivera,Democratic,Bronx,Senate,2010,,"A80136,A80135",Gustavo,Rivera
@@ -63,7 +63,7 @@ Elected_Id,District,Name,Party,County,Role,First_Elected,SpecialPosition,Filer_I
 62,57,Phara Souffrant Forrest,Dem,Kings,Assembly,2020,,"A23145,A23144",Phara,Souffrant Forrest
 63,58,N. Nick Perry,Dem,Kings,Assembly,1992,,"A26465,A03727,A03388,A05826",N. Nick ,Perry
 64,59,Jaime Williams,Dem,Kings,Assembly,2016,,"A21348,A21327",Jaime,Williams
-65,60,Charles Barron,Dem,Kings,Assembly,2014,,"C87870,C87869,C36316,C36315,C20076,C20072,C20071,A83000,A19811,A19810",Charles,Barron
+65,60,Nikki Lucas,Dem,Kings,Assembly,2022,,"",Nikki,Lucas
 66,61,Charles Fall,Dem,Richmond,Assembly,2018,,"A22344,A22343",Charles,Fall
 67,62,Michael Reilly,Rep,Richmond,Assembly,2018,,"A22314,A22313",Michael,Reilly
 68,63,Michael Cusick,Dem,Richmond,Assembly,2002,,"A13405,A13404",Michael,Cusick
@@ -71,11 +71,11 @@ Elected_Id,District,Name,Party,County,Role,First_Elected,SpecialPosition,Filer_I
 70,65,Yuh-Line Niou,Dem,New York,Assembly,2016,,"A21219,A21218",Yuh-Line,Niou
 71,66,Deborah J. Glick,Dem,New York,Assembly,1990,,"A06118,A03742,A02142,A01225",Deborah,J. Glick
 72,67,Linda Rosenthal,Dem,New York,Assembly,2006,,"A36735,A19200,A19199",Linda,Rosenthal
-73,68,Robert J. Rodriguez,Dem,New York,Assembly,2010,,"C50328,C50327,C85322,C85321,C13674,C13673,C06547,C06546,C01087,A80215,A80195",Robert,J. Rodriguez
+73,68,Eddie Gibs,Dem,New York,Assembly,2022,,"",Eddie,Gibs
 74,69,Daniel J. O'Donnell,Dem,New York,Assembly,2002,,"C10259,A07222,A07108",Daniel,J. O'Donnell
 75,70,Inez Dickens,Dem,New York,Assembly,2016,,"C33233,C21266,C21264,A21592,A20083,C87552,C84169,C33232,A20082",Inez,Dickens
 76,71,Al Taylor,Dem,New York,Assembly,2017,,"A21896,C84487,C84486,A21895",Al,Taylor
-77,72,Carmen De La Rosa,Dem,New York,Assembly,2016,,"C13533,C05092,C05091,A23058,A22948,A21888,A21367,A21366",Carmen,De La Rosa
+77,72,Manny De Los Santos,Dem,New York,Assembly,2022,,"",Manny,De Los Santos
 78,73,Dan Quart,Dem,New York,Assembly,2011,,"C37002,C37001,C20565,C20564,C10336,C09613,C05994,A85885,A85884,A85455",Dan,Quart
 79,74,Harvey Epstein,Dem,New York,Assembly,2018,,"A21948,A21947",Harvey,Epstein
 80,75,Richard N. Gottfried,Dem,New York,Assembly,1970,,"A02622,A00281",Richard,N. Gottfried
@@ -89,9 +89,9 @@ Elected_Id,District,Name,Party,County,Role,First_Elected,SpecialPosition,Filer_I
 88,83,Carl Heastie,Dem,Bronx,Assembly,2000,Speaker of the Assembly,"A22130,A12194,A11761,A11760",Carl,Heastie
 89,84,Amanda Septimo,Dem,Bronx,Assembly,2020,,"C05836,C05835,A21488,A21487",Amanda,Septimo
 90,85,Kenny Burgos,Dem,Bronx,Assembly,2020,,"A23547,A23546",Kenny,Burgos
-91,86,Victor M. Pichardo,Dem,Bronx,Assembly,2013,,"A19529,A19528",Victor,M. Pichardo
+91,86,Yudelka Tapia,Dem,Bronx,Assembly,2021,,"",Yudelka,Tapia
 92,87,Karines Reyes,Dem,Bronx,Assembly,2018,,"A22225,A22224",Karines,Reyes
-93,Statewide,Andrew,Dem,Statewide,Governor,2011,,"A31967,A31966,A12499,A12498",Andrew,Cuomo
-94,Statewide,Kathy ,Dem,Statewide,Lieutenant Governor,2015,,"C22082,C22081,A20034,A20033",Kathy,Hochul
+93,Statewide,Kathy,Dem,Statewide,Governor,2021,,"",Kathy,Hochul
+94,Statewide,Brian ,Dem,Statewide,Lieutenant Governor,2021,,"",Brian,Benjamin
 95,Statewide,Letitia,Dem,Statewide,Attorney General,2019,,"C85620,C85619,C40223,C40222,C34400,C34399,C34398,C19601,C19600,C09424,C09423,C02734,A22406",Letitia,James
 96,Statewide,Thomas,Dem,Statewide,Comptroller,2007,,"C32574,C32573,A36301,A31661,A26780,A18397,A02049,A00837",Thomas,DiNapoli
