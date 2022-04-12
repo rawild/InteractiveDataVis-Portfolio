@@ -9,8 +9,8 @@ import BottomContent from "./components/bottomcontent.js"
 import CandidateBox from "./components/candidatebox.js"
 
 //Load the data
-Promise.all(["../data/summarized_filings_2017_Jan2022.csv",
-"../data/Electeds_List.csv", "../data/candidate_summarized_2017_012022.csv"
+Promise.all(["../data/summarized_filings_2017_Jan2022_extraclean.csv",
+"../data/Electeds_List.csv", "../data/candidate_summarized_2017_012022_extraclean.csv"
 ]).then(function(files) {
     d3.csv(files[0], d3.autoType).then(data => {
         //console.log("data", data);
